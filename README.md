@@ -34,8 +34,8 @@ Tidak perlu build — `docs/index.html` adalah single-file HTML. Buka langsung:
 open docs/index.html
 ```
 
-Atau akses versi online lewat GitHub Pages:
-<https://endymuhardin.github.io/bsi-islamic-ecosystem-ai/>
+Atau akses versi online:
+<https://artivisi.com/bsi-islamic-ecosystem-ai/>
 
 Navigasi: tombol panah / spasi (next), arrow kiri (prev), Home/End (loncat ke awal/akhir).
 
