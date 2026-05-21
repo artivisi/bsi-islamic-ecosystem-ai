@@ -4,3 +4,4 @@
 *.tmp
 .idea/
 .vscode/
+workbook/diagrams/puppeteer-config.json

@@ -83,6 +83,18 @@
   ]
 )
 
+#let checkpoint(body) = block(
+  fill: rgb("#f0fdf4"),
+  stroke: (left: 3pt + accent),
+  inset: 10pt,
+  radius: 2pt,
+  width: 100%,
+  [
+    #text(fill: accent, size: 9pt, weight: "bold")[CHECKPOINT — KIRIM KE PIMPINAN (OPSIONAL)]\
+    #body
+  ]
+)
+
 // ============================================================
 // COVER PAGE
 // ============================================================
@@ -200,6 +212,22 @@ Workbook ini menemani Anda di empat lab workshop *Workshop Penggunaan AI untuk I
 #tip[
   Yang memegang keyboard fokus pada menjalankan prompt. Yang lain fokus pada *isi* dan *kualitas output* — mengkritisi, menyarankan perbaikan, dan mencocokkan terhadap pengetahuan BD Anda.
 ]
+
+== Alur Workshop Hari Ini
+
+#figure(
+  image("diagrams/group-workflow.svg", width: 95%),
+)
+
+== Kalau Pimpinan Ikut di iPad Track
+
+Bila ada pimpinan / pengamat yang bergabung lewat iPad, mereka mengikuti dokumen terpisah `BOSS-TRACK.pdf` — 4 putaran dialog di mana mereka kirim arahan/insight ke kelompok lewat WhatsApp atau Drive, lalu mengolah balik output kelompok jadi tracker konsolidasi di akhir workshop.
+
+Untuk kelompok, ini muncul sebagai *checkpoint hijau* di akhir setiap lab — moment di mana output kelompok dikirim ke pimpinan dan feedback diterima sebelum lab berikutnya. Checkpoint bersifat *opsional*: kalau pimpinan tidak hadir, lakukan self-review saja dan workshop tetap berjalan utuh.
+
+#figure(
+  image("diagrams/boss-interaction.svg", width: 95%),
+)
 
 // ============================================================
 // 2. CHEAT SHEET — BERINTERAKSI DENGAN CLAUDE
@@ -356,6 +384,14 @@ Yang harus disimpan kelompok di akhir Lab 1:
   Pastikan satu anggota kelompok mengecek kebenaran data terhadap pengetahuan lapangan. AI bisa salah angka — terutama untuk lembaga yang kurang dikenal di internet.
 ]
 
+#checkpoint[
+  Selama Ishoma, upload `prospek-[segmen].csv` ke shared folder workshop atau kirim via WA ke pimpinan yang ikut di iPad track.
+
+  *Jika pimpinan hadir:* Anda akan menerima paket challenge questions di awal Lab 2 — upload file itu ke Claude Anda sebelum mulai brief visit.
+
+  *Jika pimpinan tidak hadir:* lakukan self-review 5 menit dengan tim — apa yang sudah kuat? Apa yang masih perlu didalami? Catat 3 pertanyaan untuk tim sendiri sebelum lanjut Lab 2.
+]
+
 // ============================================================
 // 4. LAB 2 — BRIEF VISIT NASABAH
 // ============================================================
@@ -431,6 +467,14 @@ diskusi + commitment timeline next step).
 - `output/talking-points-[nama-lembaga].md` — talking points + pertanyaan discovery
 - `output/follow-up-plan-[nama-lembaga].md` — rencana 14 hari + draft email
 
+#checkpoint[
+  Sebelum coffee break sesi siang (14:15), upload `brief-visit-[lembaga].md` ke shared folder workshop.
+
+  *Jika pimpinan hadir:* Anda akan terima dokumen "Strategic Hooks" di awal Lab 3 — upload ke Claude Anda untuk dipakai saat menyusun pitch deck.
+
+  *Jika pimpinan tidak hadir:* baca ulang brief Anda di awal Lab 3. Pilih 1 angle naratif yang akan jadi benang merah pitch deck.
+]
+
 // ============================================================
 // 5. LAB 3 — PITCH MATERIAL
 // ============================================================
@@ -439,6 +483,10 @@ diskusi + commitment timeline next step).
 
 *Durasi:* 45 menit (13:30 – 14:15)\
 *Output:* Pitch deck 8–12 slide dalam format PPTX
+
+#tip[
+  *Jika pimpinan ikut di iPad track* dan sudah kirim dokumen "Strategic Hooks" via shared folder atau WA grup — upload dokumen itu ke Claude di laptop Anda *sebelum* Tahap 3.1. Insight lintas-segmen di Strategic Hooks akan membuat pitch deck Anda lebih tajam, bukan generic.
+]
 
 == Tahap 3.1 — Pilih Produk BSI
 
@@ -509,6 +557,14 @@ Setelah generate, simpan ke output/pitch-[produk]-[segmen].pptx
 
 #tip[
   AI biasanya cukup baik di outline & teks slide, tapi kurang di tata letak visual yang halus. Anggap output PPTX sebagai *draft pertama* — polesan visualnya tetap perlu dikerjakan manual di PowerPoint.
+]
+
+#checkpoint[
+  Upload pitch outline / PPTX ke shared folder kelompok Anda.
+
+  *Jika pimpinan hadir:* output akan masuk ke consolidated tracker yang di-share di akhir workshop.
+
+  *Jika pimpinan tidak hadir:* pastikan ketua kelompok save file ke folder sebagai bagian dari paket output yang akan diserahkan ke unit ISE.
 ]
 
 // ============================================================
@@ -583,6 +639,14 @@ yang dibutuhkan.
 - `output/caption-event-[lembaga].md` — 5 variasi caption + hashtags
 - `output/laporan-event-[lembaga].md` — laporan internal 1 halaman
 - `output/followup-checklist-[lembaga].md` — checklist 14 hari
+
+#checkpoint[
+  Upload paket coverage event ke shared folder kelompok.
+
+  *Jika pimpinan hadir:* paket dipakai untuk closing synthesis di sesi Q&A.
+
+  *Jika pimpinan tidak hadir:* paket otomatis masuk ke shared folder workshop untuk distribusi ke seluruh tim ISE pasca-workshop.
+]
 
 // ============================================================
 // 7. LIBRARY PROMPT TEMPLATE

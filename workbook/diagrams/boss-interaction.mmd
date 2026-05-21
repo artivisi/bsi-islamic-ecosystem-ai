@@ -1,0 +1,37 @@
+---
+config:
+  theme: base
+  themeVariables:
+    primaryColor: "#dbeafe"
+    primaryTextColor: "#1e3a8a"
+    primaryBorderColor: "#1e40af"
+    lineColor: "#475569"
+    fontSize: "13px"
+---
+sequenceDiagram
+    autonumber
+    participant B as Pimpinan<br/>iPad + Claude app
+    participant CH as Channel<br/>WA / Drive / Telegram
+    participant K as 5 Kelompok<br/>Laptop Lab + Claude Code
+
+    Note over B,K: Putaran 1 — sebelum Lab 1 (09:00–10:45)
+    B->>CH: Brief strategis ISE 2026<br/>+ challenge questions
+    CH->>K: Broadcast WA grup + Drive link
+
+    Note over B,K: Putaran 2 — Ishoma (11:45–12:45)
+    K->>CH: 5 CSV daftar prospek
+    CH->>B: Upload ke iPad Project
+    B->>CH: Challenge questions per kelompok<br/>+ catatan lintas-segmen
+    CH->>K: Baca sebelum Lab 2 mulai
+
+    Note over B,K: Putaran 3 — Coffee break (14:15–14:30)
+    K->>CH: 5 brief visit (output Lab 2)
+    CH->>B: Upload ke iPad Project
+    B->>CH: Strategic Hooks PDF
+    CH->>K: Upload ke Claude laptop<br/>sebelum Lab 3 mulai
+
+    Note over B,K: Putaran 4 — Penutup (15:00–15:15)
+    K->>CH: 5 pitch + paket coverage
+    CH->>B: Upload ke iPad Project
+    B->>CH: tracker-prospek.xlsx<br/>+ 5 draft email follow-up
+    CH->>K: Distribusi pasca-workshop

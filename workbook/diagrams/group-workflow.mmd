@@ -1,0 +1,38 @@
+---
+config:
+  theme: base
+  themeVariables:
+    primaryColor: "#fef3c7"
+    primaryTextColor: "#78350f"
+    primaryBorderColor: "#92400e"
+    lineColor: "#475569"
+    fontSize: "14px"
+---
+flowchart TD
+    classDef setup fill:#dbeafe,stroke:#1e40af,color:#1e3a8a
+    classDef lab fill:#fef3c7,stroke:#92400e,color:#78350f
+    classDef output fill:#dcfce7,stroke:#15803d,color:#14532d
+    classDef checkpoint fill:#f0fdf4,stroke:#58c034,color:#15803d
+
+    A["5 orang per kelompok<br/>1 laptop lab"]:::setup
+    B["Pilih 1 segmen ekosistem<br/>pesantren / RS Islam / sekolah Islam / dst"]:::setup
+    C["Lab 1 — Riset Pasar Segmen<br/>15–20 prospek dengan profil + skor"]:::lab
+    CP1["Checkpoint Pimpinan<br/>kirim CSV via WA / Drive (opsional)"]:::checkpoint
+    D["Lab 2 — Brief Visit Nasabah<br/>brief 2–3 halaman"]:::lab
+    CP2["Checkpoint Pimpinan<br/>kirim brief via shared folder (opsional)"]:::checkpoint
+    E["Lab 3 — Pitch Material<br/>pitch deck 8–12 slide PPTX"]:::lab
+    CP3["Checkpoint Pimpinan<br/>kirim pitch outline (opsional)"]:::checkpoint
+    F["Lab 4 — Coverage Event<br/>caption + laporan + follow-up checklist"]:::lab
+    CP4["Checkpoint Pimpinan<br/>kirim paket coverage (opsional)"]:::checkpoint
+    G["Shared Folder Workshop<br/>Google Drive / OneDrive BSI"]:::output
+
+    A --> B
+    B --> C
+    C --> CP1
+    CP1 --> D
+    D --> CP2
+    CP2 --> E
+    E --> CP3
+    CP3 --> F
+    F --> CP4
+    CP4 --> G

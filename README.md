@@ -9,8 +9,9 @@ di BSI Tower Lantai 10.
 | Path | Untuk Siapa | Format |
 |------|-------------|--------|
 | `docs/index.html` | Instruktur (proyeksi di kelas) | Standalone HTML — buka di browser, juga dipublikasi via GitHub Pages |
-| `workbook/WORKBOOK.typ` | Peserta | Sumber Typst |
-| `workbook/WORKBOOK.pdf` | Peserta | PDF cetak / digital |
+| `workbook/WORKBOOK.typ` + `.pdf` | Peserta kelompok | Typst → PDF, 28 hal. Lab 1–4 + prompt library + checkpoints opsional ke pimpinan |
+| `workbook/BOSS-TRACK.typ` + `.pdf` | Pimpinan / pengamat di iPad | Typst → PDF, 14 hal. 4 putaran dialog dengan kelompok lewat WA / Drive |
+| `workbook/diagrams/*.mmd` | Alur kerja visual | Mermaid → SVG (via mmdc), embed di workbook |
 | `workbook/Makefile` | Build pipeline | `make` |
 
 ## Build
@@ -21,10 +22,15 @@ Typst ≥ 0.14 (`brew install typst`):
 
 ```sh
 cd workbook
-make           # generate WORKBOOK.pdf
-make watch     # live recompile saat editing
+make             # generate WORKBOOK.pdf dan BOSS-TRACK.pdf
+make diagrams    # re-render Mermaid diagram (perlu mmdc + chrome-headless-shell)
+make watch       # live recompile WORKBOOK
 make clean
 ```
+
+Diagram alur sudah committed sebagai `.svg`. Cukup jalankan `make diagrams`
+kalau Anda mengubah file `.mmd` (butuh sekali setup mmdc + Chrome headless,
+detail di Makefile).
 
 ### Slides
 
