@@ -198,7 +198,7 @@ Workbook ini menemani Anda di empat lab workshop *Workshop Penggunaan AI untuk I
 - Setiap kelompok memilih *satu segmen* di Lab 1 dan menggunakan segmen yang sama sampai Lab 4
 
 #tip[
-  Yang memegang keyboard fokus pada eksekusi prompt. Yang lain fokus pada *isi* dan *kualitas output* — mengkritisi, menyarankan iterasi, dan memvalidasi terhadap pengetahuan BD Anda.
+  Yang memegang keyboard fokus pada menjalankan prompt. Yang lain fokus pada *isi* dan *kualitas output* — mengkritisi, menyarankan perbaikan, dan mencocokkan terhadap pengetahuan BD Anda.
 ]
 
 // ============================================================
@@ -263,10 +263,10 @@ Tulis ulang dengan:
 
 == Tips Umum
 
-- Mulai dari prompt sederhana, iterasi dari sana. Jangan langsung tulis prompt panjang
-- Kalau output kurang pas: katakan secara spesifik *apa* yang kurang dan minta tulis ulang
-- Untuk pekerjaan multi-langkah, minta Claude buat *rencana* dulu sebelum eksekusi
-- Selalu validasi data — Claude bisa salah, terutama untuk fakta spesifik lembaga
+- Mulai dari prompt sederhana, perbaiki bertahap dari sana. Jangan langsung tulis prompt panjang
+- Kalau output kurang pas: katakan dengan jelas *apa* yang kurang dan minta tulis ulang
+- Untuk pekerjaan banyak tahap, minta Claude buat *rencana* dulu sebelum mulai
+- Selalu cek kebenaran data — Claude bisa salah, terutama untuk fakta rinci tentang lembaga
 - Simpan prompt yang berhasil untuk dipakai ulang
 
 // ============================================================
@@ -353,7 +353,7 @@ Yang harus disimpan kelompok di akhir Lab 1:
 - `output/top-5-rationale-[segmen].md` — penjelasan skor top 5 prospek
 
 #tip[
-  Pastikan satu anggota kelompok mengecek kebenaran data terhadap pengetahuan lapangan. AI bisa salah angka — terutama untuk lembaga yang tidak terlalu prominen di internet.
+  Pastikan satu anggota kelompok mengecek kebenaran data terhadap pengetahuan lapangan. AI bisa salah angka — terutama untuk lembaga yang kurang dikenal di internet.
 ]
 
 // ============================================================
@@ -457,7 +457,7 @@ yang akan disampaikan ke [NAMA LEMBAGA / PROFIL SEGMEN].
 Gunakan struktur Problem → Solution → Proof → Ask:
 
 1. Cover
-2. Tentang BSI (1 slide, ringkas, fokus track record di segmen)
+2. Tentang BSI (1 slide, ringkas, fokus rekam jejak di segmen)
 3. Tantangan / kebutuhan [SEGMEN] terkait [TOPIK PRODUK]
 4. Solusi: [PRODUK BSI] — apa, untuk apa, untuk siapa
 5. Cara kerja (alur layanan, requirement, timeline)
@@ -474,16 +474,16 @@ catatan visual yang dibutuhkan (chart, foto, diagram).
 == Tahap 3.3 — Adaptasi Tone & Bahasa
 
 #prompt[
-Outline pitch deck di atas masih terasa generik / korporat.
+Outline pitch deck di atas masih terasa terlalu umum / korporat.
 Sesuaikan dengan profil audiens [SEGMEN]:
 
-- Gunakan istilah yang familiar bagi mereka (contoh: gunakan
-  "akad" alih-alih "kontrak", "jamaah" alih-alih "nasabah",
-  "infaq operasional" alih-alih "biaya overhead")
+- Gunakan istilah yang akrab bagi mereka (contoh: pakai
+  "akad" bukan "kontrak", "jamaah" bukan "nasabah",
+  "infaq operasional" bukan "biaya overhead")
 - Sertakan dalil syariah singkat di slide yang relevan
-- Pakai contoh kasus yang relate dengan segmen — bukan contoh
-  dari dunia korporat umum
-- Tone: hormat, kemitraan, bukan transaksional
+- Pakai contoh kasus yang dekat dengan keseharian segmen —
+  bukan contoh dari dunia korporat umum
+- Gaya bahasa: hormat, kemitraan, bukan jualan
 ]
 
 == Tahap 3.4 — Generate File PPTX
@@ -494,7 +494,7 @@ dan profesional:
 
 - Cover dengan logo BSI dan nama lembaga prospek
 - Color scheme: hijau BSI sebagai primary, abu-abu untuk teks
-- Font: standar (Calibri / Helvetica) untuk kompatibilitas
+- Font: standar (Calibri / Helvetica) supaya mudah dibuka di komputer lain
 - Setiap slide max 5 bullet, prioritas visual hierarchy
 - Slide proof dengan space untuk insert foto/chart manual
 
@@ -508,7 +508,7 @@ Setelah generate, simpan ke output/pitch-[produk]-[segmen].pptx
 - `output/pitch-notes-[produk].md` — speaker notes per slide
 
 #tip[
-  AI biasanya cukup baik di outline & teks slide, tapi kurang di tata letak visual yang halus. Treat output PPTX sebagai *draft pertama* — finishing visual tetap perlu sentuhan manual di PowerPoint.
+  AI biasanya cukup baik di outline & teks slide, tapi kurang di tata letak visual yang halus. Anggap output PPTX sebagai *draft pertama* — polesan visualnya tetap perlu dikerjakan manual di PowerPoint.
 ]
 
 // ============================================================
@@ -538,7 +538,7 @@ di [NAMA LEMBAGA] pada [TANGGAL]:
 - Variasi 1: untuk Instagram (max 200 kata, tone hangat)
 - Variasi 2: untuk LinkedIn (max 300 kata, tone profesional)
 - Variasi 3: untuk Instagram Story / WhatsApp Status (max 50 kata)
-- Variasi 4: untuk Twitter/X (max 240 karakter, threadable)
+- Variasi 4: untuk Twitter/X (max 240 karakter, bisa disambung jadi thread)
 - Variasi 5: caption foto kelompok (1–2 kalimat)
 
 Sertakan 5–7 hashtag yang relevan. Tone: ekosistem syariah,
@@ -590,7 +590,7 @@ yang dibutuhkan.
 
 = Library Prompt Template
 
-Kumpulan prompt template untuk lima area aktivitas BD. Pakai sebagai starting point — isi placeholder dalam `[...]` dengan konteks spesifik Anda.
+Kumpulan prompt template untuk lima area aktivitas BD. Pakai sebagai titik awal — isi placeholder dalam `[...]` dengan konteks Anda sendiri.
 
 == Riset Pasar
 
@@ -673,7 +673,7 @@ sosial / dst]. Hindari [JARGON YANG TIDAK COCOK].
 #prompt[
 Susun 8 pertanyaan discovery yang akan saya tanyakan saat
 visit ke [NAMA LEMBAGA]. Tujuan: memahami kebutuhan
-keuangan syariah mereka, tanpa terkesan sales.
+keuangan syariah mereka, tanpa terdengar seperti jualan.
 Pertanyaan harus terbuka, mengundang cerita, dan menggali
 konteks bisnis mereka.
 ]
@@ -764,7 +764,122 @@ agenda, keputusan, action items dengan PIC dan deadline.
 ]
 
 // ============================================================
-// 8. PANDUAN RINGKAS (1 HALAMAN)
+// 8. TEKNIK TAMBAHAN
+// ============================================================
+
+= Teknik Tambahan
+
+Dua teknik berikut tidak ikut dipraktikkan di workshop hari ini karena keterbatasan waktu, tapi sering berguna ketika Anda mulai memakai AI untuk pekerjaan harian. Pelajari setelah Anda nyaman dengan pola-pola dasar di Lab 1–4.
+
+== JSON sebagai Database Mini
+
+CSV (yang dipakai di Lab 1) cocok untuk daftar sederhana, tapi terbatas — sulit menyimpan profil lembaga yang punya banyak unit usaha, banyak kontak, atau struktur bertingkat. *JSON* adalah format teks yang lebih kaya: bisa menyimpan struktur bertingkat di satu file, dan tetap bisa dibaca langsung oleh AI.
+
+=== Contoh: Profil Pesantren dalam JSON
+
+```json
+{
+  "nama": "Pesantren Sidogiri",
+  "kota": "Pasuruan",
+  "berdiri": 1745,
+  "santri": 7500,
+  "kontak": [
+    { "nama": "KH M. Salahuddin", "jabatan": "Pengasuh" },
+    { "nama": "Ust. Ahmad", "jabatan": "Sekretaris Yayasan" }
+  ],
+  "unit_usaha": ["BPRS", "Koperasi", "BMT"],
+  "isu_terkini": [
+    "rencana pendirian RS pesantren",
+    "ekspansi BPRS ke 5 kabupaten"
+  ],
+  "last_visit": "2026-03-15",
+  "notes": "Tertarik produk pembiayaan infrastruktur"
+}
+```
+
+=== Manfaat untuk BD
+
+Bayangkan Anda punya 50–100 calon prospek pesantren. Tiap pesantren disimpan dalam satu file JSON di folder `prospek/`. Anda bisa minta Claude:
+
+#prompt[
+Di folder `prospek/` ada 50 file JSON pesantren. Tampilkan pesantren yang:
+- berdiri sebelum tahun 1900
+- punya unit usaha BPRS
+- santri lebih dari 3000
+Susun dalam tabel dengan justifikasi singkat untuk masing-masing.
+]
+
+Claude bisa membaca, memfilter, dan merangkum di seluruh file tanpa perlu database server. Cocok untuk dipakai mandiri sebagai "kartu prospek digital".
+
+=== Cara Membangun
+
+#prompt[
+Saya punya daftar 30 calon prospek pesantren di file `daftar.csv`.
+Buat file JSON untuk masing-masing pesantren dengan struktur seperti
+contoh di atas. Isi data dari riset publik yang tersedia. Simpan
+satu file per pesantren di folder `prospek/`.
+]
+
+#tip[
+  Setiap kali ada update visit, follow-up, atau perubahan kepemimpinan, minta Claude update file JSON yang relevan. Lama-lama Anda punya database prospek pribadi yang tumbuh bersama pekerjaan Anda.
+]
+
+== Playwright untuk Situs yang Sulit
+
+Beberapa situs tidak bisa diakses dengan cara biasa:
+
+- *Single Page Application (SPA)* — kontennya baru muncul setelah JavaScript jalan di browser, jadi tidak bisa dibaca langsung dari HTML mentah
+- *Wajib login* — perlu sesi login aktif untuk membuka halaman dalam
+- *Anti-crawler* — situs sengaja blokir akses otomatis biasa
+
+*Playwright* adalah tool yang menjalankan browser sungguhan (Chrome, Firefox, Safari) secara otomatis. AI bisa pakai untuk:
+
+- Login ke portal Kemenag dengan akun Anda → akses data terbaru pesantren
+- Buka situs RS Islam yang full SPA → ambil profil pengurus dan kontak
+- Buka media yang blokir bot → baca artikel terkini tentang segmen Anda
+- Ambil screenshot situs untuk dokumentasi presentasi
+
+=== Cara Kerja
+
+1. AI tulis program kecil yang membuka browser
+2. Browser tampil di layar, Anda login manual sekali
+3. Sesi login tersimpan
+4. Berikutnya AI bisa mengakses halaman-halaman dalam tanpa Anda perlu login lagi
+
+=== Contoh Prompt
+
+#prompt[
+Saya butuh akses data pesantren dari portal kemenag.go.id yang
+mengharuskan login. Tulis program Playwright yang:
+
+1. Buka browser ke halaman login Kemenag
+2. Tunggu saya login manual
+3. Setelah login, masuk ke menu pendataan pesantren
+4. Ambil data 100 pesantren teratas berdasarkan jumlah santri
+5. Simpan ke folder `prospek/` dalam format JSON (satu file per pesantren)
+]
+
+#tip[
+  Pemakaian Playwright untuk portal pemerintah atau sistem internal harus tetap menghormati ketentuan layanan situs tersebut. Pakai untuk efisiensi pekerjaan yang memang seharusnya bisa Anda lakukan manual, bukan untuk pengumpulan data massal di luar kewenangan.
+]
+
+=== Kombinasi: JSON + Playwright
+
+Dua teknik ini paling kuat saat dipakai bersama:
+
+#prompt[
+Login ke portal kemenag.go.id dengan akun saya. Ambil data 100 pesantren
+teratas. Untuk tiap pesantren, kompilasi profil lengkap mengikuti struktur
+JSON di workbook (nama, kota, berdiri, santri, kontak, unit_usaha,
+isu_terkini). Simpan ke folder `prospek/`. Setelah semua selesai,
+tampilkan ringkasan: berapa pesantren yang punya BPRS, yang santrinya
+>5000, yang berdiri sebelum 1900.
+]
+
+Hasilnya: database prospek terstruktur yang bisa Anda query terus-menerus untuk berbagai kebutuhan BD.
+
+// ============================================================
+// 9. PANDUAN RINGKAS (1 HALAMAN)
 // ============================================================
 
 #pagebreak()
@@ -810,10 +925,10 @@ agenda, keputusan, action items dengan PIC dan deadline.
   block(stroke: 1pt + brand, inset: 12pt, radius: 4pt, [
     *Saat Output Kurang Pas*
 
-    - Sebutkan *spesifik* apa yang kurang
+    - Sebutkan dengan jelas apa yang kurang
     - Minta tulis ulang dengan perbaikan terdaftar
-    - Iterasi 2–3 kali sebelum manual edit
-    - Selalu validasi data ke sumber asli
+    - Ulang 2–3 kali sebelum edit manual
+    - Selalu cek kebenaran data ke sumber asli
   ]),
 )
 
@@ -846,7 +961,7 @@ agenda, keputusan, action items dengan PIC dan deadline.
 ])
 
 // ============================================================
-// 9. GLOSSARY
+// 10. GLOSSARY
 // ============================================================
 
 = Glossary
@@ -855,21 +970,23 @@ agenda, keputusan, action items dengan PIC dan deadline.
   columns: (auto, 1fr),
   stroke: (x, y) => if y == 0 { (bottom: 1pt + brand) } else { (bottom: 0.5pt + rgb("#e2e8f0")) },
   [*Istilah*], [*Arti*],
-  [*Claude*], [AI assistant produksi Anthropic, fokus pada eksekusi tugas multi-langkah],
+  [*Claude*], [AI assistant produksi Anthropic, fokus pada menjalankan tugas bertahap],
   [*Claude Code*], [Bentuk Claude yang berjalan sebagai aplikasi terminal (CLI). Bisa baca/tulis file, jalankan tool, akses web],
   [*LLM*], [Large Language Model — jenis AI yang dilatih dengan teks dan menghasilkan teks],
   [*Prompt*], [Instruksi yang kita berikan ke AI, dalam bahasa natural],
   [*Markdown*], [Format teks dengan formatting ringan, mirip yang dipakai di WhatsApp],
-  [*CSV*], [Comma-Separated Values — format teks untuk data tabular, kompatibel dengan Excel],
+  [*CSV*], [Comma-Separated Values — format teks untuk data tabular, langsung bisa dibuka di Excel],
+  [*JSON*], [JavaScript Object Notation — format teks untuk data bertingkat, cocok dipakai sebagai database mini prospek],
   [*Pandoc*], [Tool konversi dokumen antar-format (DOCX, PDF, Markdown, dll)],
   [*Whisper*], [Tool transkripsi audio ke teks, jalan di laptop, tidak perlu upload ke cloud],
-  [*Playwright*], [Tool otomatisasi browser — AI bisa pakai untuk akses situs yang perlu login],
+  [*Playwright*], [Tool otomatisasi browser — AI pakai untuk akses situs yang perlu login, SPA, atau yang blokir bot biasa],
+  [*SPA*], [Single Page Application — situs web yang konten dalamnya baru muncul setelah JavaScript jalan, sulit di-scrape biasa],
   [*Iterasi*], [Mengulang prompt dengan perbaikan, sampai output sesuai],
-  [*Validasi*], [Mengecek kebenaran output AI terhadap sumber terpercaya — *wajib* untuk fakta spesifik],
+  [*Validasi*], [Mengecek kebenaran output AI terhadap sumber terpercaya — *wajib* untuk fakta rinci],
 )
 
 // ============================================================
-// 10. LANGKAH LANJUTAN
+// 11. LANGKAH LANJUTAN
 // ============================================================
 
 = Langkah Lanjutan
