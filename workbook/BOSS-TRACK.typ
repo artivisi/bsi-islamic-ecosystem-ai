@@ -196,7 +196,7 @@ Yang *tidak bisa* di iPad (jangan dicoba di hari workshop): Claude Code CLI, JSO
 = Persiapan Sebelum Workshop
 
 1. Install *Claude iOS app* (App Store, search "Claude by Anthropic")
-2. Login dengan akun *Pro* atau *Max* (perlu untuk artifacts &amp; file upload besar)
+2. Login dengan akun *Pro* atau *Max* (perlu untuk artifacts & file upload besar)
 3. Sehari sebelum workshop, buka `claude.ai` di browser — buat satu *Project* bernama "BSI ISE Workshop 23 Mei 2026". Project hanya bisa dibuat dari web, tapi nanti seluruh chat hari ini dilakukan dari iPad di dalam Project ini
 4. Pastikan Anda ada di *grup WhatsApp workshop* (atau channel komunikasi yang dipakai BSI hari itu)
 5. Optional: download *workbook utama PDF* ke Files app supaya bisa Split View dengan Claude saat butuh referensi
@@ -421,7 +421,7 @@ Instruktur memastikan tiap kelompok upload PDF ini ke Claude mereka di awal Lab 
 // 6. PERTUKARAN 4
 // ============================================================
 
-= Putaran 4: Konsolidasi Tracker &amp; Komitmen Follow-up
+= Putaran 4: Konsolidasi Tracker & Komitmen Follow-up
 
 *Waktu:* akhir Lab 4 (14:50 – 15:00) sampai sesi penutup (15:00 – 15:15)
 
@@ -487,9 +487,9 @@ sesuai kelompoknya.
 
 Download DOCX. Jadwal kirim email ke kelompok masing-masing pada Senin pagi (25 Mei).
 
-== Tahap 4.3 — Closing di Q&amp;A
+== Tahap 4.3 — Closing di Q&A
 
-Pakai tracker XLSX dan strategic hooks (Putaran 3) saat sesi Q&amp;A:
+Pakai tracker XLSX dan strategic hooks (Putaran 3) saat sesi Q&A:
 
 - *Tunjukkan tracker* — bahwa hari ini menghasilkan database prospek prioritas yang siap di-eksekusi 30 hari ke depan
 - *Highlight pattern* — 3 kebutuhan lintas segmen dari Putaran 3 adalah agenda BSI berikutnya
@@ -538,5 +538,5 @@ Konsultasi tanya jawab terbuka selama 14 hari pasca-workshop.
 #align(center)[
   #line(length: 30%, stroke: 1pt + accent)
   #v(0.5em)
-  #text(fill: mute, size: 10pt, style: "italic")[Selamat mengamati &amp; mengarahkan.]
+  #text(fill: mute, size: 10pt, style: "italic")[Selamat mengamati & mengarahkan.]
 ]
