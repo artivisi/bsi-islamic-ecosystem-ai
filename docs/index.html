@@ -861,6 +861,49 @@ se-Jawa Timur.&lt;/p&gt;
 </div>
 
 <div class="slide">
+  <h2>Teknik Tambahan: JSON sebagai Database Mini</h2>
+  <div class="split-pane">
+    <div>
+      <div class="pane-label">Kenapa JSON?</div>
+      <ul>
+        <li>1 file per prospek</li>
+        <li>Bisa simpan struktur bertingkat (banyak kontak, banyak unit usaha, banyak isu)</li>
+        <li>Claude bisa search &amp; filter di seluruh folder</li>
+        <li>Database pribadi, tumbuh bersama pekerjaan</li>
+      </ul>
+    </div>
+    <div>
+      <div class="pane-label">Contoh isi file</div>
+      <pre><code>{
+  "nama": "Pesantren Sidogiri",
+  "santri": 7500,
+  "unit_usaha": [
+    "BPRS", "Koperasi", "BMT"
+  ],
+  "isu_terkini": [
+    "rencana RS pesantren"
+  ],
+  "last_visit": "2026-03-15"
+}</code></pre>
+    </div>
+  </div>
+  <p class="disclaimer">Detail lengkap, prompt template, dan contoh query — workbook §8</p>
+</div>
+
+<div class="slide">
+  <h2>Teknik Tambahan: Playwright untuk Situs Sulit</h2>
+  <p style="margin-bottom: 1rem;">Untuk situs yang sulit diakses cara biasa:</p>
+  <ul>
+    <li><strong>SPA</strong> — konten baru muncul setelah JavaScript jalan</li>
+    <li>Portal yang <strong>wajib login</strong> (Kemenag, sistem internal, dll)</li>
+    <li>Situs <strong>anti-crawler</strong> yang blokir bot biasa</li>
+  </ul>
+  <br>
+  <p>AI menjalankan browser sungguhan otomatis. Kita login manual sekali — sesi tersimpan, AI lanjut ambil data sendiri.</p>
+  <p class="disclaimer">Detail lengkap dan kombinasi JSON + Playwright — workbook §8</p>
+</div>
+
+<div class="slide">
   <h2>Q&amp;A</h2>
   <p>Pertanyaan, diskusi, dan sharing pengalaman.</p>
 </div>
