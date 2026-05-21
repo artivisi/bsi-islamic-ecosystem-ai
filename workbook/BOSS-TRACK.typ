@@ -222,7 +222,7 @@ Yang *tidak bisa* di iPad (jangan dicoba di hari workshop): Claude Code CLI, JSO
 // 3. PERTUKARAN 1
 // ============================================================
 
-= Putaran 1: Anda Seed Konteks Strategis
+= Putaran 1: Anda Buka dengan Brief Strategis
 
 *Waktu:* sebelum Lab 1 dimulai (09:00 – 10:45, selama sesi presentasi konsep + setup)
 
