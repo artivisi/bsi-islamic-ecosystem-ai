@@ -2,7 +2,7 @@ TYPST_SOURCES := WORKBOOK.typ BOSS-TRACK.typ
 PDFS := $(TYPST_SOURCES:.typ=.pdf)
 
 MMD_SOURCES := $(wildcard diagrams/*.mmd)
-SVG_DIAGRAMS := $(MMD_SOURCES:.mmd=.svg)
+PNG_DIAGRAMS := $(MMD_SOURCES:.mmd=.png)
 
 PUPPETEER_CONFIG := diagrams/puppeteer-config.json
 
@@ -10,13 +10,13 @@ PUPPETEER_CONFIG := diagrams/puppeteer-config.json
 
 all: $(PDFS)
 
-%.pdf: %.typ $(SVG_DIAGRAMS)
+%.pdf: %.typ $(PNG_DIAGRAMS)
 	typst compile $<
 
-diagrams: $(SVG_DIAGRAMS)
+diagrams: $(PNG_DIAGRAMS)
 
-diagrams/%.svg: diagrams/%.mmd $(PUPPETEER_CONFIG)
-	mmdc -i $< -o $@ -b white -p $(PUPPETEER_CONFIG)
+diagrams/%.png: diagrams/%.mmd $(PUPPETEER_CONFIG)
+	mmdc -i $< -o $@ -b white -w 1800 -p $(PUPPETEER_CONFIG)
 
 $(PUPPETEER_CONFIG):
 	@echo "==> $(PUPPETEER_CONFIG) belum dibuat."

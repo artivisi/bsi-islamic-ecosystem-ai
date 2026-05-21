@@ -216,7 +216,7 @@ Workbook ini menemani Anda di empat lab workshop *Workshop Penggunaan AI untuk I
 == Alur Workshop Hari Ini
 
 #figure(
-  image("diagrams/group-workflow.svg", width: 95%),
+  image("diagrams/group-workflow.png", width: 95%),
 )
 
 == Kalau Pimpinan Ikut di iPad Track
@@ -226,7 +226,7 @@ Bila ada pimpinan / pengamat yang bergabung lewat iPad, mereka mengikuti dokumen
 Untuk kelompok, ini muncul sebagai *checkpoint hijau* di akhir setiap lab — moment di mana output kelompok dikirim ke pimpinan dan feedback diterima sebelum lab berikutnya. Checkpoint bersifat *opsional*: kalau pimpinan tidak hadir, lakukan self-review saja dan workshop tetap berjalan utuh.
 
 #figure(
-  image("diagrams/boss-interaction.svg", width: 95%),
+  image("diagrams/boss-interaction.png", width: 95%),
 )
 
 // ============================================================

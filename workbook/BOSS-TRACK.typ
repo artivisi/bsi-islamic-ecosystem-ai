@@ -169,7 +169,7 @@ Alur tipikal satu putaran:
 == Diagram Alur 4 Putaran
 
 #figure(
-  image("diagrams/boss-interaction.svg", width: 100%),
+  image("diagrams/boss-interaction.png", width: 100%),
 )
 
 == Apa yang Bisa Anda Lakukan di iPad
