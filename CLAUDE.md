@@ -37,8 +37,8 @@ BSI Tower Lantai 10.
 
 | Path | Isi |
 |------|-----|
-| `slides/index.html` | Slide deck instruktur, standalone HTML + embedded CSS/JS |
-| `slides/assets/` | Gambar diagram (lanskap, evolusi AI) |
+| `docs/index.html` | Slide deck instruktur, standalone HTML + embedded CSS/JS. Disajikan via GitHub Pages dari folder ini |
+| `docs/assets/` | Gambar diagram (lanskap, evolusi AI) |
 | `workbook/WORKBOOK.typ` | Sumber workbook peserta (Typst) |
 | `workbook/WORKBOOK.pdf` | PDF cetak/share. Committed agar HEAD selalu mencerminkan yang dibagikan |
 | `workbook/Makefile` | `make` / `make watch` / `make clean` |

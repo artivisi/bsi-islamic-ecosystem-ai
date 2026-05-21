@@ -8,7 +8,7 @@ di BSI Tower Lantai 10.
 
 | Path | Untuk Siapa | Format |
 |------|-------------|--------|
-| `slides/index.html` | Instruktur (proyeksi di kelas) | Standalone HTML — buka di browser |
+| `docs/index.html` | Instruktur (proyeksi di kelas) | Standalone HTML — buka di browser, juga dipublikasi via GitHub Pages |
 | `workbook/WORKBOOK.typ` | Peserta | Sumber Typst |
 | `workbook/WORKBOOK.pdf` | Peserta | PDF cetak / digital |
 | `workbook/Makefile` | Build pipeline | `make` |
@@ -28,11 +28,14 @@ make clean
 
 ### Slides
 
-Tidak perlu build — `slides/index.html` adalah single-file HTML. Buka langsung:
+Tidak perlu build — `docs/index.html` adalah single-file HTML. Buka langsung:
 
 ```sh
-open slides/index.html
+open docs/index.html
 ```
+
+Atau akses versi online lewat GitHub Pages:
+<https://endymuhardin.github.io/bsi-islamic-ecosystem-ai/>
 
 Navigasi: tombol panah / spasi (next), arrow kiri (prev), Home/End (loncat ke awal/akhir).
 
@@ -43,7 +46,7 @@ Navigasi: tombol panah / spasi (next), arrow kiri (prev), Home/End (loncat ke aw
 - Setiap kelompok berbagi 1 laptop lab (pre-setup oleh tim ArtiVisi)
 - 4 lab dikerjakan berurutan dengan satu segmen ekosistem pilihan kelompok
 
-Detail rundown ada di `slides/index.html` slide agenda dan di workbook bagian
+Detail rundown ada di `docs/index.html` slide agenda dan di workbook bagian
 "Cara Pakai Workbook".
 
 ## Instruktur
