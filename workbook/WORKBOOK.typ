@@ -18,8 +18,8 @@
 
 #set par(justify: true, leading: 0.65em)
 
-#let brand = rgb("#1a1a2e")
-#let accent = rgb("#e94560")
+#let brand = rgb("#2e3192")
+#let accent = rgb("#58c034")
 #let mute = rgb("#64748b")
 
 #show heading.where(level: 1): it => [
@@ -90,7 +90,9 @@
 #set page(numbering: none, margin: (x: 2.5cm, y: 3cm))
 
 #align(center)[
-  #v(3cm)
+  #v(1.5cm)
+  #image("assets/logo-artivisi.svg", width: 5cm)
+  #v(1cm)
   #text(fill: accent, size: 11pt, weight: "bold")[
     #upper[Workbook Peserta]
   ]
@@ -110,11 +112,11 @@
     PT Bank Syariah Indonesia, Tbk\
     Sabtu, 23 Mei 2026 · BSI Tower Lantai 10
   ]
-  #v(3cm)
+  #v(2.5cm)
   #text(fill: mute, size: 10pt)[
     Disusun oleh:\
     *Endy Muhardin* · PT ArtiVisi Intermedia\
-    software.endy.muhardin.com
+    artivisi.com · software.endy.muhardin.com
   ]
 ]
 
@@ -880,6 +882,10 @@ agenda, keputusan, action items dengan PIC dan deadline.
 4. *Bulan kedua* — Mulai bagikan prompt yang berhasil ke rekan satu tim. Bangun *prompt library* internal ISE
 
 == Tier Langganan Claude untuk Pemakaian Mandiri
+
+#tip[
+  Untuk workshop hari ini, akun Claude Pro pada laptop lab disediakan oleh BSI. Setelah workshop, jika Anda ingin melanjutkan latihan secara mandiri di laptop pribadi, Anda perlu langganan sendiri. Tabel berikut sebagai panduan memilih tier.
+]
 
 #table(
   columns: (auto, auto, 1fr),

@@ -15,13 +15,45 @@ BSI Tower Lantai 10.
 
 ## Editing Guidance
 
-- Bahasa Indonesia. Hindari jargon software development (parse, deploy,
-  framework, repository, commit/push) — peserta bukan developer
-- Pakai istilah domain: lembaga, segmen, prospek, BD, visit, pitch, coverage
+Bahasa Indonesia di seluruh materi. Audiens BD non-teknis — hindari jargon
+software development. Pakai istilah domain BD dan syariah.
+
+### Substitusi Istilah
+
+| Hindari            | Pakai                                       |
+|--------------------|---------------------------------------------|
+| parse, parsing     | analisa, baca, kompilasi                    |
+| deploy             | jalankan, terapkan, distribusikan           |
+| framework          | kerangka, struktur                          |
+| repository, repo   | folder kerja, kumpulan dokumen              |
+| commit, push, pull | simpan, kirim, ambil versi terbaru          |
+| API, endpoint      | layanan, akses data                         |
+| script             | program kecil, otomasi                      |
+| debug              | telusuri masalah, cek error                 |
+| iterate, iteration | ulang, perbaiki bertahap                    |
+| workflow           | alur kerja                                  |
+| stakeholder        | pemangku kepentingan, pihak terkait         |
+| user / client      | pengguna, pemakai, lembaga                  |
+| customer           | nasabah, prospek                            |
+| onboarding         | pengenalan awal, orientasi                  |
+
+### Konteks Domain
+
 - Contoh dan studi kasus harus relevan dengan ekosistem syariah Indonesia
-  (pesantren, RS Islam, dst — bukan kampus, bukan dosen)
+  (pesantren, RS Islam, sekolah Islam, ZISWAF, masjid, halal F&B, ormas,
+  travel umrah, PT Islam) — *bukan* kampus, *bukan* dosen
+- Pakai istilah domain BD: lembaga, segmen, prospek, visit, pitch, coverage,
+  brief, follow-up
+- Pakai istilah syariah yang tepat: akad (bukan kontrak), jamaah / santri /
+  pasien (bukan customer), infaq operasional (bukan biaya overhead)
+
+### Lain-lain
+
 - **Tidak ada konten komersial** (harga, invoice, kontrak) — repo ini publik
 - Drop academic titles dari nama instruktur (no S.T., M.E.)
+- Subscription Claude untuk workshop ini disediakan oleh **BSI** (bukan
+  ArtiVisi, bukan "organizer" generik). ArtiVisi hanya membantu instalasi
+  Claude Code + tools di laptop lab
 
 ## Format Workshop yang Disepakati
 
