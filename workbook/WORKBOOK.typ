@@ -1013,6 +1013,45 @@ Hasilnya: database prospek terstruktur yang bisa Anda query terus-menerus untuk 
   [Max], [\$100–200/bulan], [Pemakaian intensif, banyak lab paralel, dokumen besar],
 )
 
+== Untuk yang Mau Lebih Lanjut: Claude Code on the Web + GitHub
+
+Kalau Anda ingin kapabilitas Claude yang penuh (akses file, jalan multi-step, otomasi besar) tapi tidak punya laptop dengan Claude Code — atau pernah berpikir "andai saya bisa kerja seperti workshop ini dari iPad" — *Claude Code on the Web* adalah jalannya.
+
+=== Cara Kerja
+
+1. Anda hubungkan Claude ke satu GitHub repo Anda
+2. Anda beri Claude tugas lewat `claude.ai/code`
+3. Anthropic membuat VM cloud yang isolated
+4. VM meng-clone repo Anda, Claude mengerjakan tugas di sana
+5. Claude push hasil ke branch baru di repo Anda
+6. Anda review hasilnya dan merge bila sudah OK
+
+=== Kelebihan
+
+- Berfungsi dari device manapun — laptop, *iPad*, ponsel
+- Bisa menjalankan banyak tugas paralel — misal riset 100 prospek sekaligus, ditinggal sambil ngopi
+- Hasil otomatis ter-backup di GitHub (ada history versi, tidak hilang)
+- Tidak perlu install apa-apa di device Anda
+
+=== Yang Perlu Dipelajari Dulu
+
+- *GitHub dasar* — konsep repository, branch, push, merge. Sekitar 1–2 hari belajar mandiri untuk yang belum pernah pakai
+- Cara menghubungkan GitHub ke Claude (ada di dokumentasi Claude)
+
+=== Kapan Tidak Perlu Pakai
+
+- Untuk chat sederhana harian (drafting brief, talking points, caption) — `claude.ai` web saja sudah cukup
+- Untuk pekerjaan sekali pakai yang tidak perlu disimpan terstruktur
+
+=== Tautan
+
+- Akses: `claude.ai/code`
+- Dokumentasi: `code.claude.com/docs/en/claude-code-on-the-web`
+
+#tip[
+  Ini satu-satunya cara mendapat kapabilitas penuh Claude Code dari iPad. Cocok untuk peserta yang sehari-hari lebih banyak pakai iPad (level manajemen, atau yang sering visit lapangan dan jarang buka laptop).
+]
+
 == Resource Tambahan
 
 - claude.com/docs — dokumentasi resmi Claude
