@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Workshop AI untuk Islamic Ecosystem BD — BSI</title>
+  <style>
+    :root {
+      --brand: #1a1a2e;
+      --accent: #e94560;
+      --light: #f5f5f5;
+      --slate-600: #475569;
+      --slate-800: #1e293b;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--brand);
+      color: var(--slate-800);
+      overflow: hidden;
+      height: 100vh;
+      width: 100vw;
+    }
+
+    .slide {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 4rem 6rem;
+      background: #fff;
+    }
+
+    .slide.active { display: flex; }
+
+    .slide h1 {
+      font-size: 3.2rem;
+      font-weight: 800;
+      color: var(--brand);
+      margin-bottom: 1.5rem;
+      text-align: center;
+      line-height: 1.2;
+    }
+
+    .slide h2 {
+      font-size: 2.6rem;
+      font-weight: 700;
+      color: var(--brand);
+      margin-bottom: 1.2rem;
+      line-height: 1.3;
+    }
+
+    .slide h3 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .slide p {
+      font-size: 1.6rem;
+      line-height: 1.8;
+      color: var(--slate-600);
+      text-align: center;
+      max-width: 900px;
+    }
+
+    .slide ul {
+      list-style: none;
+      font-size: 1.6rem;
+      line-height: 2;
+      color: var(--slate-600);
+      max-width: 900px;
+      width: 100%;
+    }
+
+    .slide ul li::before {
+      content: "→ ";
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .slide .subtitle {
+      font-size: 1.4rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .slide .author {
+      font-size: 1.1rem;
+      color: var(--slate-600);
+      margin-top: 1rem;
+    }
+
+    .slide.cover {
+      background: var(--brand);
+      color: #fff;
+    }
+
+    .slide.cover h1 { color: #fff; }
+    .slide.cover h2 { color: #fff; }
+    .slide.cover p { color: rgba(255,255,255,0.8); }
+    .slide.cover ul { color: rgba(255,255,255,0.9); }
+    .slide.cover .subtitle { color: var(--accent); }
+    .slide.cover .author { color: rgba(255,255,255,0.6); }
+
+    .slide .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      width: 100%;
+      max-width: 900px;
+    }
+
+    .slide .highlight {
+      background: var(--accent);
+      color: #fff;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+
+    .slide code {
+      background: #f1f5f9;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      font-size: 0.9em;
+    }
+
+    .slide pre {
+      background: #1e293b;
+      color: #e2e8f0;
+      padding: 2rem 2.5rem;
+      border-radius: 8px;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      font-size: 1.3rem;
+      line-height: 1.8;
+      overflow-x: auto;
+      width: 100%;
+      max-width: 1000px;
+      text-align: left;
+      white-space: pre;
+    }
+
+    .slide pre code {
+      background: none;
+      padding: 0;
+      font-size: inherit;
+      color: inherit;
+    }
+
+    .slide .split-pane {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      width: 100%;
+      max-width: 1100px;
+    }
+
+    .slide .split-pane .pane-label {
+      font-size: 1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #94a3b8;
+      margin-bottom: 0.5rem;
+    }
+
+    .slide .split-pane pre {
+      max-width: 100%;
+      font-size: 1.1rem;
+    }
+
+    .slide .pane-preview {
+      background: #fff;
+      border: 2px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 1.5rem 2rem;
+      text-align: left;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: var(--slate-800);
+    }
+
+    .slide .pane-preview h1 {
+      font-size: 1.6rem;
+      text-align: left;
+      margin-bottom: 0.6rem;
+    }
+
+    .slide .pane-preview h2 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .slide .pane-preview ul {
+      font-size: 1.1rem;
+      list-style: disc;
+      padding-left: 1.5rem;
+    }
+
+    .slide .pane-preview ul li::before {
+      content: none;
+    }
+
+    .slide-img {
+      max-width: 85%;
+      max-height: 70vh;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+
+    .slide table {
+      border-collapse: collapse;
+      width: 100%;
+      max-width: 1100px;
+      font-size: 1.2rem;
+    }
+
+    .slide th {
+      background: var(--brand);
+      color: #fff;
+      padding: 0.8rem 1.4rem;
+      text-align: left;
+      font-weight: 600;
+    }
+
+    .slide td {
+      padding: 0.8rem 1.4rem;
+      border-bottom: 1px solid #e2e8f0;
+      color: var(--slate-600);
+      vertical-align: top;
+    }
+
+    .slide tr:nth-child(even) td { background: #f8fafc; }
+
+    .slide .disclaimer {
+      font-size: 0.75rem;
+      color: #94a3b8;
+      margin-top: 1.2rem;
+      text-align: center;
+      max-width: 900px;
+    }
+
+    .slide .disclaimer a {
+      color: #94a3b8;
+      text-decoration: underline;
+    }
+
+    /* Navigation bar */
+    .nav-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 3rem;
+      background: rgba(26,26,46,0.9);
+      backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 1.5rem;
+      z-index: 100;
+    }
+
+    .nav-bar .counter {
+      color: rgba(255,255,255,0.6);
+      font-size: 0.85rem;
+      font-family: monospace;
+    }
+
+    .nav-bar .controls {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .nav-bar button {
+      background: rgba(255,255,255,0.15);
+      border: none;
+      color: #fff;
+      padding: 0.3rem 0.8rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.85rem;
+    }
+
+    .nav-bar button:hover { background: rgba(255,255,255,0.25); }
+
+    @media (max-width: 768px) {
+      .slide { padding: 2rem 1.5rem; }
+      .slide h1 { font-size: 1.8rem; }
+      .slide h2 { font-size: 1.4rem; }
+      .slide p, .slide ul { font-size: 1rem; }
+      .slide .two-col { grid-template-columns: 1fr; gap: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="slide cover active">
+  <h1>Workshop Penggunaan AI<br>untuk Islamic Ecosystem<br>Business Development</h1>
+  <p class="subtitle">PT Bank Syariah Indonesia · Sabtu, 23 Mei 2026</p>
+  <p class="author">Endy Muhardin · PT ArtiVisi Intermedia</p>
+</div>
+
+<div class="slide">
+  <h2>Agenda Hari Ini</h2>
+  <div class="two-col">
+    <div>
+      <h3>Sesi 1 · 08:45 – 11:45</h3>
+      <ul>
+        <li>Pembukaan seremonial</li>
+        <li>Lanskap AI 2026</li>
+        <li>Evolusi penggunaan AI</li>
+        <li>Setup akun &amp; tool dasar</li>
+        <li>Lab 1: Riset Pasar Segmen</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Sesi 2 · 12:45 – 15:15</h3>
+      <ul>
+        <li>Lab 2: Brief Visit Nasabah</li>
+        <li>Lab 3: Pitch Material</li>
+        <li>Lab 4: Coverage Event</li>
+        <li>Diskusi &amp; Q&amp;A</li>
+        <li>Penutup</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="slide">
+  <h2>Lanskap AI 2026</h2>
+  <img src="assets/lanskap-ai.jpg" alt="Lanskap AI: Provider, Model, Tool" class="slide-img">
+</div>
+
+<div class="slide">
+  <h2>Biaya Langganan AI 2026</h2>
+  <table>
+    <tr>
+      <th>Provider</th>
+      <th>Free</th>
+      <th>Mid</th>
+      <th>Top</th>
+    </tr>
+    <tr>
+      <td><strong>Anthropic</strong> (Claude)</td>
+      <td>Free</td>
+      <td>Pro $20/bln</td>
+      <td>Max $100 / $200/bln</td>
+    </tr>
+    <tr>
+      <td><strong>OpenAI</strong> (ChatGPT)</td>
+      <td>Free</td>
+      <td>Plus $20/bln</td>
+      <td>Pro $200/bln</td>
+    </tr>
+    <tr>
+      <td><strong>Google</strong> (Gemini)</td>
+      <td>Free</td>
+      <td>Pro $19.99/bln</td>
+      <td>Ultra $249.99/bln</td>
+    </tr>
+    <tr>
+      <td><strong>z.ai</strong> (GLM)</td>
+      <td>—</td>
+      <td>Lite $48.6/3bln</td>
+      <td>Pro $194.4 / Max $432/3bln</td>
+    </tr>
+  </table>
+  <p class="disclaimer">
+    Data per Mei 2026. Harga dapat berubah sewaktu-waktu.<br>
+    Sumber:
+    <a href="https://claude.com/pricing">claude.com/pricing</a> ·
+    <a href="https://chatgpt.com/pricing">chatgpt.com/pricing</a> ·
+    <a href="https://one.google.com/about/google-ai-plans/">one.google.com</a> ·
+    <a href="https://z.ai">z.ai</a>
+  </p>
+</div>
+
+<div class="slide">
+  <h2>Evolusi Penggunaan AI</h2>
+  <img src="assets/evolusi-ai.jpg" alt="Evolusi penggunaan AI: Q&A Chat → Host App → CLI → Commander" class="slide-img">
+</div>
+
+<div class="slide">
+  <h2>Cara AI Bekerja di 2026</h2>
+  <p style="margin-bottom:1.5rem;">Contoh perintah yang bisa langsung dijalankan Claude:</p>
+  <ul>
+    <li>Buka portal Kemenag, cari 20 pesantren terbesar di Jatim, kompilasi profil ke spreadsheet</li>
+    <li>Baca daftar prospek RS Islam di folder ini, urutkan berdasar potensi, buat ringkasan internal</li>
+    <li>Transkrip rekaman meeting dengan pengurus yayasan [audio.mp3], buat ringkasan &amp; action items</li>
+    <li>Konversi semua brief produk BSI di folder ini jadi ringkasan 1 halaman per produk</li>
+    <li>Review draft pitch deck untuk segmen pesantren, sesuaikan tone dengan audiens pengasuh</li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h2>Setup Workshop Hari Ini</h2>
+  <div class="two-col">
+    <div>
+      <h3>Sudah Disiapkan</h3>
+      <ul>
+        <li>Laptop lab (3–5 unit) — BSI</li>
+        <li>Claude Code + tools — ArtiVisi</li>
+        <li>Login Claude Pro per laptop — Organizer</li>
+        <li>Browser &amp; folder kerja — ArtiVisi</li>
+        <li>Materi referensi produk BSI</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Yang Anda Bawa</h3>
+      <ul>
+        <li>Catatan / buku tulis</li>
+        <li>Daftar prospek yang sedang ditangani (jika ada)</li>
+        <li>Materi pemasaran yang biasa dipakai (jika ada)</li>
+      </ul>
+    </div>
+  </div>
+  <p class="disclaimer">Peserta tidak perlu install apa-apa, tidak perlu bawa laptop. Cukup hadir &amp; siap eksplor.</p>
+</div>
+
+<div class="slide">
+  <h2>Format File yang Claude Pahami</h2>
+  <table>
+    <tr>
+      <th>Format</th>
+      <th>Apa Itu</th>
+      <th>Jenis</th>
+    </tr>
+    <tr>
+      <td>Markdown (.md)</td>
+      <td>Teks dengan formatting ringan, mirip WhatsApp</td>
+      <td>Teks</td>
+    </tr>
+    <tr>
+      <td>CSV (.csv)</td>
+      <td>Tabel data — daftar prospek, data segmen, dst</td>
+      <td>Teks</td>
+    </tr>
+    <tr>
+      <td>HTML (.html)</td>
+      <td>Halaman web yang tampil di browser</td>
+      <td>Teks</td>
+    </tr>
+    <tr>
+      <td>JSON (.json)</td>
+      <td>Data terstruktur untuk mesin — AI yang handle</td>
+      <td>Teks</td>
+    </tr>
+    <tr>
+      <td>PDF, DOCX, PPTX, XLSX</td>
+      <td>File Word, PowerPoint, Excel, PDF</td>
+      <td><strong>Biner</strong></td>
+    </tr>
+  </table>
+</div>
+
+<div class="slide">
+  <h3>Contoh File Teks: Markdown</h3>
+  <div class="split-pane">
+    <div>
+      <div class="pane-label">Source</div>
+      <pre><code># Brief Visit: Pesantren Sidogiri
+
+## Profil Lembaga
+Berdiri **1745**, pesantren tertua
+di Jawa Timur.
+
+- Santri: ~7.500 jiwa
+- Unit: BPRS, koperasi, BMT
+- Pengasuh: KH M. Salahuddin</code></pre>
+    </div>
+    <div>
+      <div class="pane-label">Preview</div>
+      <div class="pane-preview">
+        <h1>Brief Visit: Pesantren Sidogiri</h1>
+        <h2>Profil Lembaga</h2>
+        <p>Berdiri <strong>1745</strong>, pesantren tertua di Jawa Timur.</p>
+        <ul>
+          <li>Santri: ~7.500 jiwa</li>
+          <li>Unit: BPRS, koperasi, BMT</li>
+          <li>Pengasuh: KH M. Salahuddin</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="slide">
+  <h3>Contoh File Teks: CSV</h3>
+  <pre><code>nama,segmen,kota,santri,unit_usaha,potensi
+"Pesantren Sidogiri","pesantren","Pasuruan",7500,"BPRS,koperasi,BMT","tinggi"
+"Pesantren Gontor","pesantren","Ponorogo",6000,"yayasan,koperasi","tinggi"
+"Pesantren Lirboyo","pesantren","Kediri",5500,"koperasi","sedang"
+"RS Islam Sultan Agung","rs-islam","Semarang",,"yayasan","tinggi"</code></pre>
+  <p class="disclaimer">Excel mengerti CSV. Spreadsheet bisa langsung di-import.</p>
+</div>
+
+<div class="slide">
+  <h3>Contoh File Teks: HTML</h3>
+  <div class="split-pane">
+    <div>
+      <div class="pane-label">Source</div>
+      <pre><code>&lt;h1&gt;Sosialisasi BSI
+Pesantren Hub&lt;/h1&gt;
+&lt;p&gt;Dihadiri &lt;strong&gt;200
+perwakilan&lt;/strong&gt; pesantren
+se-Jawa Timur.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Materi: pembiayaan&lt;/li&gt;
+  &lt;li&gt;MoU: 15 pesantren&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+    </div>
+    <div>
+      <div class="pane-label">Preview</div>
+      <div class="pane-preview">
+        <h1>Sosialisasi BSI Pesantren Hub</h1>
+        <p>Dihadiri <strong>200 perwakilan</strong> pesantren se-Jawa Timur.</p>
+        <ul>
+          <li>Materi: pembiayaan</li>
+          <li>MoU: 15 pesantren</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="slide">
+  <h2>Kenapa Format Teks?</h2>
+  <p>AI yang kita pakai adalah <strong>Large Language Model</strong> (LLM) — dilatih dengan <strong>teks</strong>, berpikir dalam <strong>teks</strong>, menghasilkan <strong>teks</strong>.</p>
+  <br>
+  <ul>
+    <li>LLM membaca dan menulis teks secara native</li>
+    <li>File teks bisa langsung dibaca, diedit, dan ditulis oleh AI</li>
+    <li>File biner (DOCX, PDF, XLSX) harus dikonversi dulu ke teks</li>
+    <li>Semakin sedikit konversi, semakin akurat hasilnya</li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h2>File Biner (Non-Teks)</h2>
+  <p>PDF, DOCX, PPTX, XLSX, MP4, MP3, JPG, PNG</p>
+  <br>
+  <ul>
+    <li>Tidak bisa dibaca langsung oleh AI sebagai teks</li>
+    <li>Perlu <strong>dikonversi dulu</strong> ke format teks agar bisa diolah</li>
+    <li>Contoh: DOCX → Markdown, XLSX → CSV, MP4 → transkrip teks</li>
+    <li>AI juga bisa menulis program kecil untuk membaca isi file biner</li>
+  </ul>
+  <br>
+  <p><span class="highlight">Output akhir untuk klien tetap dalam format Office</span></p>
+</div>
+
+<div class="slide">
+  <h2>Tool yang AI Jalankan</h2>
+  <table>
+    <tr>
+      <th>Kebutuhan</th>
+      <th>Tool</th>
+      <th>Hasil untuk Anda</th>
+    </tr>
+    <tr>
+      <td>Konversi dokumen (DOCX, PPTX, PDF ↔ Markdown)</td>
+      <td><strong>Pandoc</strong></td>
+      <td>Pitch deck final, brief, laporan dalam format Office</td>
+    </tr>
+    <tr>
+      <td>Transkrip audio/video meeting</td>
+      <td><strong>Whisper</strong></td>
+      <td>Transkrip meeting prospek, di laptop, tanpa upload ke cloud</td>
+    </tr>
+    <tr>
+      <td>Buat diagram &amp; chart</td>
+      <td><strong>Mermaid CLI</strong></td>
+      <td>Diagram struktur lembaga, alur produk, dst</td>
+    </tr>
+    <tr>
+      <td>Olah gambar (resize, crop, anotasi)</td>
+      <td><strong>ImageMagick</strong></td>
+      <td>Edit logo lembaga, sesuaikan ukuran untuk pitch deck</td>
+    </tr>
+    <tr>
+      <td>Baca teks dari scan / foto dokumen</td>
+      <td><strong>Tesseract</strong></td>
+      <td>Ekstrak isi dari brosur prospek, scan MoU, dst</td>
+    </tr>
+  </table>
+  <p class="disclaimer">Semua tool dijalankan AI otomatis — kita cukup minta hasilnya.</p>
+</div>
+
+<div class="slide">
+  <h2>AI Juga Bisa Menulis Program</h2>
+  <table>
+    <tr>
+      <th>Kebutuhan</th>
+      <th>Yang AI Lakukan</th>
+    </tr>
+    <tr>
+      <td>Baca &amp; analisis daftar prospek di Excel</td>
+      <td>Tulis program untuk buka file, hitung statistik, urutkan</td>
+    </tr>
+    <tr>
+      <td>Ambil data dari portal Kemenag / BPS / dst</td>
+      <td>Tulis program untuk buka web, ekstrak data, simpan ke CSV</td>
+    </tr>
+    <tr>
+      <td>Buat grafik distribusi prospek per segmen / provinsi</td>
+      <td>Tulis program untuk render chart, simpan ke PNG/PDF</td>
+    </tr>
+    <tr>
+      <td>Rapikan ratusan file brief lama</td>
+      <td>Tulis program untuk rename sesuai pola, pindah ke folder kategori</td>
+    </tr>
+    <tr>
+      <td>Hitung potensi pasar per segmen (rata-rata, total, sebaran)</td>
+      <td>Tulis program statistik, jalankan, sajikan hasil</td>
+    </tr>
+  </table>
+  <p class="disclaimer">Kita tidak perlu bisa coding — AI yang menulis &amp; menjalankan programnya.</p>
+</div>
+
+<div class="slide">
+  <h2>Kombinasi Tool + Script</h2>
+  <p>Contoh: Akses portal pendataan yang perlu login (Kemenag, sistem internal BSI, dst)</p>
+  <br>
+  <ul>
+    <li>AI tulis program buka browser otomatis (Playwright)</li>
+    <li>Browser tampilkan halaman login, kita masukkan username &amp; password</li>
+    <li>Program simpan sesi login</li>
+    <li>Selanjutnya AI bisa akses halaman-halaman yang dilindungi</li>
+    <li>AI baca, kompilasi, dan rangkum isi halaman tersebut</li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h2>Use Case 1: Riset Pasar Segmen</h2>
+  <ul>
+    <li>Kompilasi daftar lembaga per segmen berdasar provinsi / kota</li>
+    <li>Profiling lembaga: struktur, jumlah jamaah / santri / pasien, profil pengurus</li>
+    <li>Pemetaan ekosistem: hubungan antar lembaga, induk ormas, jaringan alumni</li>
+    <li>Benchmark layanan keuangan syariah yang sudah dipakai segmen target</li>
+  </ul>
+  <p class="disclaimer">Akan dilatih di <strong>Lab 1</strong></p>
+</div>
+
+<div class="slide">
+  <h2>Use Case 2: Profiling Prospek &amp; Brief Visit</h2>
+  <ul>
+    <li>Brief lembaga prospek: latar belakang, kepemimpinan, isu terkini, agenda strategis</li>
+    <li>Pemetaan pengambil keputusan dan jalur pendekatan</li>
+    <li>Talking points yang disesuaikan dengan profil prospek</li>
+    <li>Pertanyaan kunci untuk discovery saat visit</li>
+    <li>Follow-up plan &amp; template korespondensi pasca-visit</li>
+  </ul>
+  <p class="disclaimer">Akan dilatih di <strong>Lab 2</strong></p>
+</div>
+
+<div class="slide">
+  <h2>Use Case 3: Pitch Material per Segmen</h2>
+  <ul>
+    <li>Pitch deck 8–12 slide untuk produk BSI tertentu, disesuaikan dengan segmen</li>
+    <li>Product brief 1–2 halaman untuk distribusi ke prospek</li>
+    <li>Pembanding produk syariah BSI vs alternatif pasar</li>
+    <li>Adaptasi materi yang sama untuk segmen berbeda (pesantren vs RS Islam vs travel umrah)</li>
+  </ul>
+  <p class="disclaimer">Akan dilatih di <strong>Lab 3</strong></p>
+</div>
+
+<div class="slide">
+  <h2>Use Case 4: Coverage Event</h2>
+  <ul>
+    <li>Materi pra-event: undangan, brosur, talking points narahubung</li>
+    <li>Materi event: caption sosial media (Instagram, LinkedIn), foto caption</li>
+    <li>Materi pasca-event: laporan internal 1 halaman, dokumentasi publikasi, follow-up checklist</li>
+    <li>Adaptasi tone konten antara komunikasi internal BSI vs eksternal segmen</li>
+  </ul>
+  <p class="disclaimer">Akan dilatih di <strong>Lab 4</strong></p>
+</div>
+
+<div class="slide">
+  <h2>Use Case 5: Korespondensi &amp; Proposal</h2>
+  <ul>
+    <li>Surat penawaran resmi ke lembaga prospek</li>
+    <li>Email follow-up dengan tone yang sesuai segmen</li>
+    <li>Draft proposal kerjasama untuk segmen tertentu</li>
+    <li>Notulen rapat internal yang siap distribusi</li>
+  </ul>
+  <p class="disclaimer">Bonus use case — dipakai sebagai latihan mandiri pasca-workshop</p>
+</div>
+
+<div class="slide">
+  <h2>Format Kerja Lab</h2>
+  <ul>
+    <li>Setiap kelompok 5 orang berbagi 1 laptop lab</li>
+    <li>Pilih ketua kelompok untuk memegang keyboard di awal</li>
+    <li>Anggota bergantian mengoperasikan laptop setiap lab</li>
+    <li>Setiap kelompok pilih <strong>satu segmen</strong> di Lab 1 dan pakai segmen yang sama sampai Lab 4</li>
+    <li>Diskusi tim sebelum setiap output difinalisasi</li>
+    <li>Akhir workshop: hasil di-copy ke shared folder yang disiapkan BSI</li>
+  </ul>
+</div>
+
+<div class="slide">
+  <h2>Struktur Folder Kerja</h2>
+  <pre><code>segmen-pesantren-jatim/
+├── input/         ← data awal (daftar prospek, materi BSI)
+├── output/        ← hasil jadi (brief, pitch deck, laporan)
+├── data/          ← kompilasi prospek (CSV)
+├── referensi/     ← profil produk BSI, regulasi segmen
+└── catatan/       ← log diskusi tim, decision log</code></pre>
+</div>
+
+<div class="slide">
+  <h3>Lab 1: Riset Pasar Segmen Ekosistem</h3>
+  <p style="font-size:1.2rem; margin-bottom:1rem;"><strong>10:45 – 11:45</strong> · 60 menit</p>
+  <table>
+    <tr>
+      <th>Tahap</th>
+      <th>Kegiatan</th>
+    </tr>
+    <tr>
+      <td><strong>Pilih segmen</strong></td>
+      <td>Tiap kelompok pilih 1 segmen: pesantren / sekolah Islam / RS Islam / masjid / ZISWAF / halal F&amp;B / travel umrah / ormas / PT Islam</td>
+    </tr>
+    <tr>
+      <td><strong>Riset prospek</strong></td>
+      <td>Minta Claude cari 15–20 lembaga prospek di segmen tersebut. Kompilasi profil dasar masing-masing.</td>
+    </tr>
+    <tr>
+      <td><strong>Pemetaan</strong></td>
+      <td>Minta Claude petakan hubungan antar lembaga (induk ormas, jaringan alumni, dll)</td>
+    </tr>
+    <tr>
+      <td><strong>Output</strong></td>
+      <td>Spreadsheet prospek dengan profil + skor potensi awal</td>
+    </tr>
+  </table>
+</div>
+
+<div class="slide">
+  <h3>Lab 2: Profiling Prospek + Brief Visit Nasabah</h3>
+  <p style="font-size:1.2rem; margin-bottom:1rem;"><strong>12:45 – 13:30</strong> · 45 menit</p>
+  <table>
+    <tr>
+      <th>Tahap</th>
+      <th>Kegiatan</th>
+    </tr>
+    <tr>
+      <td><strong>Pilih prospek</strong></td>
+      <td>Pilih 1 prospek prioritas dari hasil Lab 1</td>
+    </tr>
+    <tr>
+      <td><strong>Riset mendalam</strong></td>
+      <td>Minta Claude gali profil lengkap: kepemimpinan, isu terkini, agenda strategis</td>
+    </tr>
+    <tr>
+      <td><strong>Susun brief</strong></td>
+      <td>Profil 1 halaman + talking points + pertanyaan discovery + follow-up plan</td>
+    </tr>
+    <tr>
+      <td><strong>Output</strong></td>
+      <td>Brief visit 2–3 halaman, siap dibawa ke pertemuan</td>
+    </tr>
+  </table>
+</div>
+
+<div class="slide">
+  <h3>Lab 3: Pitch Material per Segmen</h3>
+  <p style="font-size:1.2rem; margin-bottom:1rem;"><strong>13:30 – 14:15</strong> · 45 menit</p>
+  <table>
+    <tr>
+      <th>Tahap</th>
+      <th>Kegiatan</th>
+    </tr>
+    <tr>
+      <td><strong>Pilih produk BSI</strong></td>
+      <td>Pilih 1 produk BSI yang relevan untuk segmen kelompok</td>
+    </tr>
+    <tr>
+      <td><strong>Adaptasi</strong></td>
+      <td>Minta Claude susun pitch deck yang disesuaikan dengan profil segmen &amp; prospek di Lab 2</td>
+    </tr>
+    <tr>
+      <td><strong>Refinement</strong></td>
+      <td>Iterasi tone, contoh kasus, struktur cerita sesuai audiens segmen</td>
+    </tr>
+    <tr>
+      <td><strong>Output</strong></td>
+      <td>Pitch deck 8–12 slide dalam format PPTX, siap pakai</td>
+    </tr>
+  </table>
+</div>
+
+<div class="slide">
+  <h3>Lab 4: Coverage Event</h3>
+  <p style="font-size:1.2rem; margin-bottom:1rem;"><strong>14:30 – 15:00</strong> · 30 menit</p>
+  <table>
+    <tr>
+      <th>Tahap</th>
+      <th>Kegiatan</th>
+    </tr>
+    <tr>
+      <td><strong>Skenario</strong></td>
+      <td>Asumsikan event peresmian / sosialisasi BSI di salah satu prospek segmen kelompok</td>
+    </tr>
+    <tr>
+      <td><strong>Materi event</strong></td>
+      <td>Minta Claude draft caption sosial media (IG, LinkedIn), foto caption</td>
+    </tr>
+    <tr>
+      <td><strong>Materi pasca-event</strong></td>
+      <td>Laporan internal 1 halaman + follow-up checklist + draft thank-you note</td>
+    </tr>
+    <tr>
+      <td><strong>Output</strong></td>
+      <td>Paket coverage event lengkap (caption + laporan + follow-up)</td>
+    </tr>
+  </table>
+</div>
+
+<div class="slide">
+  <h2>Output Workshop</h2>
+  <div class="two-col">
+    <div>
+      <h3>Per Kelompok</h3>
+      <ul>
+        <li>Daftar 15–20 prospek (spreadsheet)</li>
+        <li>Brief visit nasabah</li>
+        <li>Pitch deck produk per segmen</li>
+        <li>Paket coverage event</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Per Peserta</h3>
+      <ul>
+        <li>Workbook lengkap (PDF)</li>
+        <li>Prompt template library</li>
+        <li>Panduan ringkas 1 halaman</li>
+        <li>Akses shared folder hasil</li>
+      </ul>
+    </div>
+  </div>
+  <p class="disclaimer">Seluruh output didistribusikan via shared folder di akhir workshop.</p>
+</div>
+
+<div class="slide">
+  <h2>Q&amp;A</h2>
+  <p>Pertanyaan, diskusi, dan sharing pengalaman.</p>
+</div>
+
+<div class="slide cover">
+  <h1>Penutup</h1>
+  <ul>
+    <li>AI bukan pengganti BD — AI akselerator pekerjaan rutin</li>
+    <li>Mulai dari 1 use case, tingkatkan secara bertahap</li>
+    <li>Format teks adalah kunci akurasi output</li>
+    <li>Workbook + prompt template bisa dipakai mandiri di Claude Pro pribadi</li>
+    <li>Konsultasi via email selama 14 hari pasca-workshop</li>
+  </ul>
+  <br>
+  <p class="author">Terima kasih — Endy Muhardin</p>
+</div>
+
+<div class="nav-bar">
+  <span class="counter"><span id="current">1</span> / <span id="total"></span></span>
+  <div class="controls">
+    <button onclick="prev()">← Prev</button>
+    <button onclick="next()">Next →</button>
+  </div>
+</div>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  let current = 0;
+
+  document.getElementById('total').textContent = slides.length;
+
+  function show(n) {
+    slides[current].classList.remove('active');
+    current = (n + slides.length) % slides.length;
+    slides[current].classList.add('active');
+    document.getElementById('current').textContent = current + 1;
+  }
+
+  function next() { show(current + 1); }
+  function prev() { show(current - 1); }
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); next(); }
+    if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); prev(); }
+    if (e.key === 'Home') { e.preventDefault(); show(0); }
+    if (e.key === 'End') { e.preventDefault(); show(slides.length - 1); }
+  });
+
+  let touchStartX = 0;
+  document.addEventListener('touchstart', function(e) { touchStartX = e.touches[0].clientX; });
+  document.addEventListener('touchend', function(e) {
+    const diff = e.changedTouches[0].clientX - touchStartX;
+    if (Math.abs(diff) > 50) { diff < 0 ? next() : prev(); }
+  });
+</script>
+
+</body>
+</html>
