@@ -12,26 +12,33 @@ sequenceDiagram
     autonumber
     participant B as Pimpinan<br/>iPad + Claude app
     participant CH as Channel<br/>WA / Drive / Telegram
-    participant K as 5 Kelompok<br/>Laptop Lab + Claude Code
+    participant K as Kelompok BD (3-5)<br/>Laptop Lab + Claude Code
+    participant P as Kelompok Planning (1)<br/>Laptop Lab + Claude Code
 
-    Note over B,K: Putaran 1 — sebelum Lab 1 (09:00–10:45)
+    Note over B,P: Putaran 1 — sebelum Lab 1 (09:00–10:45)
     B->>CH: Brief strategis ISE 2026<br/>+ challenge questions
     CH->>K: Broadcast WA grup + Drive link
+    CH->>P: Broadcast WA grup + Drive link
 
-    Note over B,K: Putaran 2 — Ishoma (11:45–12:45)
-    K->>CH: 5 CSV daftar prospek
-    CH->>B: Upload ke iPad Project
-    B->>CH: Challenge questions per kelompok<br/>+ catatan lintas-segmen
+    Note over B,P: Putaran 2 — Ishoma (11:45–12:45)
+    K->>CH: CSV daftar prospek per segmen
+    P->>CH: Portfolio RKAP + narrative Direksi
+    CH->>B: Upload semua output ke iPad Project
+    B->>CH: Challenge questions per kelompok BD<br/>+ catatan lintas-segmen
     CH->>K: Baca sebelum Lab 2 mulai
+    Note right of P: Planning gunakan output Lab 1 BD<br/>untuk Sesi 5.2 (sintesis lintas segmen)
 
-    Note over B,K: Putaran 3 — Coffee break (14:15–14:30)
-    K->>CH: 5 brief visit (output Lab 2)
+    Note over B,P: Putaran 3 — Coffee break (14:15–14:30)
+    K->>CH: Brief visit (output Lab 2 BD)
+    P->>CH: Insight lintas segmen + deck Radir (output Sesi 5.2 & 5.3)
     CH->>B: Upload ke iPad Project
     B->>CH: Strategic Hooks PDF
     CH->>K: Upload ke Claude laptop<br/>sebelum Lab 3 mulai
 
-    Note over B,K: Putaran 4 — Penutup (15:00–15:15)
-    K->>CH: 5 pitch + paket coverage
+    Note over B,P: Putaran 4 — Penutup (15:00–15:15)
+    K->>CH: Pitch + paket coverage (Lab 3 & 4)
+    P->>CH: Monitoring + action items per dept (Sesi 5.4)
     CH->>B: Upload ke iPad Project
-    B->>CH: tracker-prospek.xlsx<br/>+ 5 draft email follow-up
+    B->>CH: Consolidated tracker BD + Planning<br/>+ draft email follow-up
     CH->>K: Distribusi pasca-workshop
+    CH->>P: Distribusi pasca-workshop

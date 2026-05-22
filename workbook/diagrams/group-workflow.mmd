@@ -2,20 +2,42 @@
 flowchart LR
     classDef setup fill:#dbeafe,stroke:#1e40af,color:#1e3a8a
     classDef lab fill:#fef3c7,stroke:#92400e,color:#78350f
+    classDef plab fill:#fde2e4,stroke:#9d174d,color:#831843
     classDef output fill:#dcfce7,stroke:#15803d,color:#14532d
     classDef checkpoint fill:#f0fdf4,stroke:#58c034,color:#15803d
 
-    A["5 orang/kelompok<br/>pilih 1 segmen"]:::setup
-    B["Lab 1<br/>Riset Pasar"]:::lab
-    C["Lab 2<br/>Brief Visit"]:::lab
-    D["Lab 3<br/>Pitch Material"]:::lab
-    E["Lab 4<br/>Coverage Event"]:::lab
+    subgraph TrackBD["Track BD (3-5 kelompok)"]
+      direction LR
+      A1["5 orang/kelompok<br/>pilih 1 segmen"]:::setup
+      B["Lab 1<br/>Riset Pasar"]:::lab
+      C["Lab 2<br/>Brief Visit"]:::lab
+      D["Lab 3<br/>Pitch Material"]:::lab
+      E["Lab 4<br/>Coverage Event"]:::lab
+      A1 --> B --> C --> D --> E
+    end
+
+    subgraph TrackPP["Track Planning & Portfolio (1 kelompok)"]
+      direction LR
+      A2["5 orang<br/>level portofolio<br/>lintas segmen"]:::setup
+      B2["Sesi 5.1<br/>Konsolidasi RKAP"]:::plab
+      C2["Sesi 5.2<br/>Sintesis Lintas Segmen"]:::plab
+      D2["Sesi 5.3<br/>Materi Radir"]:::plab
+      E2["Sesi 5.4<br/>Monitoring & EW"]:::plab
+      A2 --> B2 --> C2 --> D2 --> E2
+    end
+
     F["Shared Folder<br/>Workshop"]:::output
+    CP["Checkpoint Pimpinan (opsional)<br/>kirim output via WA / Drive<br/>setelah tiap Lab/Sesi"]:::checkpoint
 
-    CP["Checkpoint Pimpinan (opsional)<br/>kirim output via WA / Drive<br/>setelah tiap Lab"]:::checkpoint
-
-    A --> B --> C --> D --> E --> F
+    E --> F
+    E2 --> F
     B -.-> CP
     C -.-> CP
     D -.-> CP
     E -.-> CP
+    B2 -.-> CP
+    C2 -.-> CP
+    D2 -.-> CP
+    E2 -.-> CP
+
+    B -. "output Lab 1<br/>(prospek per segmen)" .-> C2

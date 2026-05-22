@@ -158,12 +158,18 @@
 
 = Cara Pakai Workbook
 
-Workbook ini menemani Anda di empat lab workshop *Workshop Penggunaan AI untuk Islamic Ecosystem Business Development*. Setelah workshop, workbook ini juga dapat dipakai sebagai rujukan ketika Anda mengulang latihan secara mandiri dengan akun Claude Pro pribadi.
+Workbook ini menemani Anda di lab workshop *Workshop Penggunaan AI untuk Islamic Ecosystem Business Development*. Setelah workshop, workbook ini juga dapat dipakai sebagai rujukan ketika Anda mengulang latihan secara mandiri dengan akun Claude Pro pribadi.
+
+Workshop dijalankan dalam dua track paralel sesuai unit kerja peserta:
+
+- *Track BD* (3 dept BD pengelola segmen) — Lab 1 sampai Lab 4: riset pasar segmen, profiling prospek + brief visit, pitch material per segmen, coverage event.
+- *Track Planning & Portfolio* (Dept Planning & Portfolio Management) — Lab 5 dengan 4 sesi yang berjalan di slot waktu yang sama dengan Lab 1–4: konsolidasi target & anggaran, sintesis insight lintas segmen, materi Radir / checkpoint, monitoring portofolio.
 
 == Apa yang Akan Anda Pelajari
 
 - Konsep dasar AI generasi 2026 dan cara berinteraksi yang produktif
-- Penggunaan Claude untuk lima area aktivitas BD: riset pasar, profiling prospek, brief visit, pitch material, dan coverage event
+- Untuk Track BD: penggunaan Claude untuk lima area aktivitas BD — riset pasar, profiling prospek, brief visit, pitch material, dan coverage event
+- Untuk Track Planning & Portfolio: penggunaan Claude untuk empat area aktivitas planning — konsolidasi target & anggaran lintas segmen, sintesis insight lintas segmen, penyusunan materi Radir / checkpoint, dan monitoring portofolio + early warning
 - Format file yang ramah AI dan tool yang dijalankan oleh AI
 - Workflow kerja kelompok di laptop lab bersama
 
@@ -176,29 +182,31 @@ Workbook ini menemani Anda di empat lab workshop *Workshop Penggunaan AI untuk I
   [Tanggal], [Sabtu, 23 Mei 2026],
   [Waktu], [08:45 – 15:15],
   [Tempat], [BSI Tower Lantai 10],
-  [Peserta], [15–25 pegawai organik ISE],
-  [Format kerja], [3–5 kelompok @ 5 orang, 1 laptop lab per kelompok],
+  [Peserta], [20–30 pegawai organik ISE (3 dept BD + 1 dept Planning & Portfolio)],
+  [Format kerja], [4–6 kelompok @ 5 orang, 1 laptop lab per kelompok (3–5 kelompok Track BD + 1 kelompok Track Planning)],
   [Bahasa], [Bahasa Indonesia],
 )
 
 == Rundown
 
+Sesi pleno (warna abu-abu) diikuti semua peserta bersama. Slot lab (warna putih) berjalan paralel — Track BD mengerjakan Lab 1–4, Track Planning & Portfolio mengerjakan Lab 5.1–5.4 di slot waktu yang sama.
+
 #table(
-  columns: (auto, 1fr, auto),
+  columns: (auto, 1.2fr, 1.2fr, auto),
   stroke: (x, y) => if y == 0 { (bottom: 1pt + brand) } else { (bottom: 0.5pt + rgb("#e2e8f0")) },
-  [*Waktu*], [*Kegiatan*], [*Durasi*],
-  [08:45 – 09:00], [Pembukaan seremonial (Pembukaan, Ayat Suci, Opening Speech)], [15 mnt],
-  [09:00 – 09:30], [Lanskap AI 2026], [30 mnt],
-  [09:30 – 10:00], [Evolusi penggunaan AI (presentasi + demo)], [30 mnt],
-  [10:00 – 10:15], [Coffee break], [15 mnt],
-  [10:15 – 10:45], [Setup akun, browser, tool dasar], [30 mnt],
-  [10:45 – 11:45], [*Lab 1: Riset Pasar Segmen Ekosistem*], [60 mnt],
-  [11:45 – 12:45], [Ishoma], [60 mnt],
-  [12:45 – 13:30], [*Lab 2: Profiling Prospek + Brief Visit*], [45 mnt],
-  [13:30 – 14:15], [*Lab 3: Pitch Material per Segmen*], [45 mnt],
-  [14:15 – 14:30], [Coffee break], [15 mnt],
-  [14:30 – 15:00], [*Lab 4: Coverage Event*], [30 mnt],
-  [15:00 – 15:15], [Diskusi, Q&A, penutup], [15 mnt],
+  [*Waktu*], [*Track BD*], [*Track Planning & Portfolio*], [*Durasi*],
+  [08:45 – 09:00], table.cell(colspan: 2, fill: rgb("#f1f5f9"))[Pembukaan seremonial (Pembukaan, Ayat Suci, Opening Speech)], [15 mnt],
+  [09:00 – 09:30], table.cell(colspan: 2, fill: rgb("#f1f5f9"))[Lanskap AI 2026], [30 mnt],
+  [09:30 – 10:00], table.cell(colspan: 2, fill: rgb("#f1f5f9"))[Evolusi penggunaan AI (presentasi + demo)], [30 mnt],
+  [10:00 – 10:15], table.cell(colspan: 2, fill: rgb("#f1f5f9"))[Coffee break], [15 mnt],
+  [10:15 – 10:45], table.cell(colspan: 2, fill: rgb("#f1f5f9"))[Setup akun, browser, tool dasar], [30 mnt],
+  [10:45 – 11:45], [*Lab 1:* Riset Pasar Segmen Ekosistem], [*Lab 5.1:* Konsolidasi Target & Anggaran Lintas Segmen], [60 mnt],
+  [11:45 – 12:45], table.cell(colspan: 2, fill: rgb("#f1f5f9"))[Ishoma], [60 mnt],
+  [12:45 – 13:30], [*Lab 2:* Profiling Prospek + Brief Visit], [*Lab 5.2:* Sintesis Insight Lintas Segmen], [45 mnt],
+  [13:30 – 14:15], [*Lab 3:* Pitch Material per Segmen], [*Lab 5.3:* Materi Radir / Checkpoint], [45 mnt],
+  [14:15 – 14:30], table.cell(colspan: 2, fill: rgb("#f1f5f9"))[Coffee break], [15 mnt],
+  [14:30 – 15:00], [*Lab 4:* Coverage Event], [*Lab 5.4:* Monitoring Portofolio & Early Warning], [30 mnt],
+  [15:00 – 15:15], table.cell(colspan: 2, fill: rgb("#f1f5f9"))[Diskusi, Q&A, penutup], [15 mnt],
 )
 
 == Format Kerja Kelompok
@@ -207,10 +215,11 @@ Workbook ini menemani Anda di empat lab workshop *Workshop Penggunaan AI untuk I
 - Pilih ketua tim di awal — yang memegang keyboard pertama kali
 - Anggota bergantian mengoperasikan laptop di setiap lab
 - Diskusikan setiap output bersama sebelum lanjut ke tahap berikutnya
-- Setiap kelompok memilih *satu segmen* di Lab 1 dan menggunakan segmen yang sama sampai Lab 4
+- *Kelompok Track BD:* memilih *satu segmen* di Lab 1 dan menggunakan segmen yang sama sampai Lab 4
+- *Kelompok Track Planning & Portfolio:* tidak memilih segmen — bekerja di level portofolio (lintas segmen) sepanjang Lab 5.1–5.4
 
 #tip[
-  Yang memegang keyboard fokus pada menjalankan prompt. Yang lain fokus pada *isi* dan *kualitas output* — mengkritisi, menyarankan perbaikan, dan mencocokkan terhadap pengetahuan BD Anda.
+  Yang memegang keyboard fokus pada menjalankan prompt. Yang lain fokus pada *isi* dan *kualitas output* — mengkritisi, menyarankan perbaikan, dan mencocokkan terhadap pengetahuan BD / planning Anda.
 ]
 
 == Alur Workshop Hari Ini
@@ -649,12 +658,420 @@ yang dibutuhkan.
 ]
 
 // ============================================================
-// 7. LIBRARY PROMPT TEMPLATE
+// 7. LAB 5 — PLANNING & PORTFOLIO (TRACK PARALEL)
+// ============================================================
+
+= Lab 5: Planning & Portfolio Management
+
+Lab ini dikerjakan oleh kelompok Track Planning & Portfolio sepanjang hari, dengan 4 sesi yang sejajar waktu dengan Lab 1–4 di Track BD:
+
+#table(
+  columns: (auto, 1fr, auto),
+  stroke: (x, y) => if y == 0 { (bottom: 1pt + brand) } else { (bottom: 0.5pt + rgb("#e2e8f0")) },
+  [*Slot*], [*Sesi*], [*Durasi*],
+  [10:45 – 11:45], [*Sesi 5.1:* Konsolidasi Target & Anggaran Lintas Segmen], [60 mnt],
+  [12:45 – 13:30], [*Sesi 5.2:* Sintesis Insight Lintas Segmen], [45 mnt],
+  [13:30 – 14:15], [*Sesi 5.3:* Materi Radir / Checkpoint], [45 mnt],
+  [14:30 – 15:00], [*Sesi 5.4:* Monitoring Portofolio & Early Warning], [30 mnt],
+)
+
+Berbeda dengan Track BD yang memilih satu segmen, kelompok Planning bekerja di level *portofolio* — lintas seluruh segmen ekosistem (pesantren, RS Islam, sekolah Islam, PT Islam, masjid, ZISWAF, halal F&B, ormas, travel umrah). Dua sesi (5.2 dan 5.3) memanfaatkan output yang sudah dihasilkan kelompok BD di shared folder.
+
+#tip[
+  Sebelum Sesi 5.1 dimulai, fasilitator membagikan paket *sample data planning* ke shared folder. Paket berisi:
+
+  - `rkap-dept-1.xlsx`, `rkap-dept-2.xlsx`, `rkap-dept-3.xlsx` — draft RKAP 2027 dari 3 dept BD (format dan unit *sengaja* tidak seragam — bagian dari latihan normalisasi)
+  - `realisasi-q1-2027.csv` — data realisasi vs target Q1 2027 per 9 segmen (untuk Sesi 5.4)
+  - `agenda-radir.md` — agenda Radir Direksi bulan berjalan (untuk Sesi 5.3)
+
+  Semua nama lembaga di sample data adalah lembaga publik yang sudah dikenal luas — *tidak* memakai data prospek BSI nyata. Angka target & realisasi seluruhnya fiktif.
+]
+
+== Sesi 5.1 — Konsolidasi Target & Anggaran Lintas Segmen
+
+*Durasi:* 60 menit (10:45 – 11:45)\
+*Output:* Portfolio view RKAP 2027 + gap analysis + draft narrative approval
+
+=== Skenario
+
+Anda baru saja menerima draft RKAP 2027 dari 3 dept BD ekosistem. Tiap dept mengirim file Excel sendiri dengan format sedikit berbeda — kolom yang ada, satuan angka, dan periode breakdown tidak konsisten. Tugas Anda hari ini: kompilasi jadi satu portfolio view yang utuh, identifikasi gap dan inkonsistensi, lalu susun draft narrative untuk dipresentasikan ke Direksi minggu depan.
+
+=== Tahap 5.1.1 — Normalisasi Input Multi-Dept
+
+Upload tiga file draft RKAP ke Claude. Mulai dengan minta kompilasi struktur.
+
+#prompt[
+Saya Planning & Portfolio di unit ISE BSI. Saya terima 3 file draft
+RKAP 2027 dari 3 dept BD pengelola segmen (file: `rkap-dept-1.xlsx`,
+`rkap-dept-2.xlsx`, `rkap-dept-3.xlsx`).
+
+Tolong:
+1. Baca ketiga file
+2. Identifikasi struktur kolom masing-masing (kemungkinan tidak seragam)
+3. Buat satu schema gabungan yang menampung semua informasi
+4. Normalisasi data ke schema gabungan tersebut
+5. Output: satu CSV `portfolio-rkap-2027.csv` dengan kolom konsisten:
+   segmen, dept_pengelola, target_pembiayaan_miliar,
+   target_dpk_miliar, target_fee_based_miliar, jumlah_prospek_target,
+   alokasi_capex_juta, alokasi_opex_juta, asumsi_kunci
+
+Jika ada kolom yang tidak konsisten antar file, *tandai* di kolom
+catatan — jangan diasumsikan.
+]
+
+=== Tahap 5.1.2 — Agregasi Portfolio
+
+#prompt[
+Dari `portfolio-rkap-2027.csv`, buat ringkasan agregasi portfolio:
+
+- Total target pembiayaan, DPK, dan fee-based di level portfolio
+- Breakdown per segmen (% kontribusi tiap segmen ke total)
+- Breakdown per dept pengelola
+- Total alokasi anggaran (capex + opex) di level portfolio
+- Rasio target bisnis vs alokasi anggaran per segmen
+  (output per Rupiah anggaran)
+
+Sajikan dalam tabel ringkas + 1 paragraf observasi awal: segmen mana
+yang paling agresif targetnya, segmen mana yang paling efisien alokasi
+anggarannya.
+]
+
+=== Tahap 5.1.3 — Gap Analysis
+
+#prompt[
+Lakukan gap analysis terhadap portfolio RKAP 2027:
+
+1. *Gap konsistensi:* segmen mana yang asumsi kuncinya tidak realistis
+   atau bertabrakan dengan asumsi segmen lain? (contoh: dua segmen
+   sama-sama klaim akuisisi nasabah dari pool yang sama)
+
+2. *Gap kapasitas:* total target jumlah prospek vs kapasitas tim BD
+   real (asumsikan tiap BD officer maksimal handle 30 prospek aktif
+   per kuartal). Apakah ada dept yang oversubscribed?
+
+3. *Gap alokasi:* segmen dengan target tinggi tapi alokasi anggaran
+   minim — atau sebaliknya, segmen dengan alokasi besar tapi target
+   modest. Mana yang perlu dipertanyakan?
+
+Output: list gap dengan severity (kritis / penting / minor) dan
+rekomendasi tindak lanjut sebelum Direksi review.
+]
+
+=== Tahap 5.1.4 — Draft Narrative untuk Direksi
+
+#prompt[
+Susun draft narrative 1 halaman untuk approval Direksi RKAP 2027
+ISE BD. Tone: eksekutif, ringkas, fokus pada *decision points* yang
+butuh persetujuan, bukan deskripsi data.
+
+Struktur:
+1. *Ringkasan portfolio* (3 kalimat — total target, growth vs 2026,
+   prioritas strategis 2027)
+2. *Highlight segmen* (3 segmen paling strategis, 1 paragraf masing-masing)
+3. *Gap dan asumsi kunci* (yang sudah ditemukan di Tahap 5.1.3, ringkas)
+4. *Permintaan keputusan* (3–4 item: alokasi tambahan, geser target,
+   ubah priority segmen, dll)
+5. *Risiko utama* (top 3 risiko portfolio yang harus diawasi)
+]
+
+=== Output Sesi 5.1
+
+- `output/portfolio-rkap-2027.csv` — RKAP konsolidasi lintas segmen
+- `output/agregasi-portfolio.md` — ringkasan agregasi + observasi
+- `output/gap-analysis-rkap.md` — list gap + rekomendasi
+- `output/narrative-direksi-rkap-2027.md` — draft narrative 1 halaman
+
+#tip[
+  Data dari 3 dept BD biasanya punya inkonsistensi kecil (satuan, periode, definisi metrik). *Jangan* minta Claude "samakan saja" — minta Claude *tunjukkan* inkonsistensi dulu, baru putuskan bersama tim mana yang dijadikan standar. Konsolidasi yang dipaksakan tanpa flagging adalah sumber kesalahan Radir.
+]
+
+#checkpoint[
+  Selama Ishoma, upload `portfolio-rkap-2027.csv` dan `narrative-direksi-rkap-2027.md` ke shared folder workshop.
+
+  *Jika pimpinan hadir:* output Sesi 5.1 dipakai sebagai konteks untuk Strategic Hooks yang akan disusun pimpinan di Putaran 3 BOSS-TRACK.
+
+  *Jika pimpinan tidak hadir:* lakukan self-review 5 menit dengan tim — apakah 3 decision points di narrative sudah cukup tajam? Apa pertanyaan kritis yang mungkin diajukan Direksi?
+]
+
+== Sesi 5.2 — Sintesis Insight Lintas Segmen
+
+*Durasi:* 45 menit (12:45 – 13:30)\
+*Output:* Insight lintas segmen + rekomendasi prioritas alokasi resource
+
+=== Skenario
+
+3 kelompok BD baru saja selesai Lab 1 — masing-masing punya 15–20 prospek + pemetaan ekosistem untuk segmen mereka. Output mereka (CSV prospek + peta ekosistem + top-5 rationale) sudah ada di shared folder. Tugas Anda: baca semua output, ekstrak tema lintas segmen, dan susun rekomendasi prioritas alokasi resource untuk siklus planning berikutnya.
+
+=== Tahap 5.2.1 — Kumpulkan Output Lab 1 BD
+
+Buka shared folder workshop. Download semua file dengan pola:
+
+- `prospek-[segmen].csv`
+- `peta-ekosistem-[segmen].md`
+- `top-5-rationale-[segmen].md`
+
+Upload semuanya ke Claude sekaligus.
+
+#prompt[
+Saya Planning & Portfolio. Saya upload output Lab 1 dari 3 kelompok
+BD — masing-masing punya prospek + pemetaan ekosistem untuk segmen
+yang mereka pegang.
+
+Tolong:
+1. Baca semua file
+2. Sebutkan: tiap kelompok pegang segmen apa, dan berapa prospek
+   yang teridentifikasi
+3. Buat tabel ringkas: segmen, jumlah prospek, range skor potensi,
+   prospek dengan skor tertinggi (nama + alasan)
+]
+
+=== Tahap 5.2.2 — Tema Lintas Segmen
+
+#prompt[
+Dari ketiga output Lab 1, identifikasi tema *lintas segmen* —
+hal-hal yang muncul di lebih dari satu segmen dan menunjukkan
+peluang atau risiko sistemik:
+
+1. *Lembaga yang overlap:* ada nama lembaga yang muncul di lebih
+   dari satu segmen? (contoh: yayasan yang punya pesantren + RS +
+   sekolah sekaligus)
+
+2. *Jaringan / induk ormas yang sama:* induk ormas yang menaungi
+   lembaga di banyak segmen sekaligus — potensi MoU di level induk
+
+3. *Tema kebutuhan yang berulang:* kebutuhan keuangan yang muncul
+   di banyak segmen (contoh: cash management untuk yayasan multi-unit,
+   pembiayaan infrastruktur untuk renovasi)
+
+4. *Bottleneck regulasi/sertifikasi yang sama:* isu regulasi yang
+   sama-sama dihadapi banyak segmen di tahun berjalan
+
+Sajikan dalam bentuk narrative singkat per tema, dengan referensi
+ke nama lembaga / dept BD yang relevan.
+]
+
+=== Tahap 5.2.3 — Rekomendasi Prioritas
+
+#prompt[
+Berdasar tema lintas segmen di atas, susun rekomendasi prioritas
+alokasi resource untuk siklus planning berikutnya:
+
+1. *Segmen prioritas atas* (1–2 segmen): mana yang harus dapat
+   tambahan kapasitas BD officer + budget akuisisi. Alasannya apa?
+
+2. *Cross-segment initiative* (1–2 inisiatif): peluang yang melibatkan
+   2+ segmen dan butuh koordinasi antar dept BD. Misal: pendekatan
+   level induk ormas, produk paket multi-segmen, event lintas-lembaga.
+
+3. *Segmen yang perlu re-evaluasi* (0–1 segmen): jika ada segmen
+   yang prospeknya tipis atau skor potensi rendah secara sistematis,
+   bahas perlukah re-evaluasi cakupan.
+
+Format: bullet list singkat per rekomendasi + 2–3 kalimat justifikasi
+masing-masing.
+]
+
+=== Output Sesi 5.2
+
+- `output/insight-lintas-segmen.md` — tema lintas segmen + referensi
+- `output/prioritas-portfolio.md` — rekomendasi prioritas resource
+- `output/lembaga-overlap.csv` — daftar lembaga yang muncul di lebih dari 1 segmen (jika ada)
+
+#tip[
+  Insight lintas segmen sering kali *tidak terlihat* oleh tiap dept BD sendiri — mereka hanya melihat segmen masing-masing. Justru di sinilah peran Planning paling kuat: melihat pola yang muncul dari agregasi data lintas dept.
+]
+
+== Sesi 5.3 — Materi Radir / Checkpoint
+
+*Durasi:* 45 menit (13:30 – 14:15)\
+*Output:* Deck eksekutif 8–10 slide untuk Radir / Checkpoint
+
+=== Skenario
+
+Minggu depan ada Radir bulanan ISE BD. Topik agenda: progress vs target Q1 2027, isu kritis lintas segmen, dan 3–4 decision points yang butuh persetujuan Direksi. Tugas Anda: susun deck eksekutif 8–10 slide. Materi diambil dari output Sesi 5.1 (RKAP) + Sesi 5.2 (insight lintas segmen) + data realisasi Q1 fiktif yang disediakan fasilitator.
+
+=== Tahap 5.3.1 — Outline Deck Radir
+
+#prompt[
+Susun outline deck Radir bulanan ISE BD untuk minggu depan.
+Audiens: Direksi BSI (3–5 orang). Durasi presentasi: 20 menit.
+
+Pakai struktur *Status → Issue → Decision* yang lazim di Radir:
+
+1. *Cover* — judul, periode, nama unit
+2. *Executive Summary* (1 slide) — 4 kalimat: status portfolio
+   secara agregat vs target, kondisi anggaran, tema lintas segmen
+   utama, jumlah decision points
+3. *Status Portfolio Q1 2027* (1 slide) — tabel pencapaian per
+   segmen + traffic light (hijau/kuning/merah)
+4. *Highlight Segmen Strategis* (2 slide) — 2 segmen paling
+   strategis: progress, peluang, isu
+5. *Tema Lintas Segmen* (1 slide) — 3 insight utama dari
+   Sesi 5.2 (overlap induk ormas, cross-segment opportunity,
+   bottleneck regulasi)
+6. *Risiko & Mitigasi* (1 slide) — top 3 risiko portfolio
+7. *Decision Points* (1–2 slide) — 3–4 decision yang butuh
+   persetujuan Direksi, format: konteks 1 kalimat → opsi yang
+   sudah dipertimbangkan → rekomendasi Planning
+8. *Next Steps & Timeline* (1 slide) — milestone berikutnya
+
+Untuk tiap slide, sertakan: judul, 3–5 bullet points, dan
+catatan visual (chart / tabel / diagram yang dibutuhkan).
+]
+
+=== Tahap 5.3.2 — Tone Eksekutif & Data Visualization
+
+#prompt[
+Outline deck di atas masih terlalu *deskriptif*. Untuk audiens
+Direksi, tone harus *executive*:
+
+- Kalimat pendek, langsung ke kesimpulan
+- Angka harus *terbandingkan* (vs target, vs periode lalu,
+  vs segmen lain) — bukan angka mentah
+- Setiap slide harus punya *satu pesan utama* yang bisa
+  ditangkap dalam 5 detik melihat
+- Hindari jargon BD detail (talking points, brief visit, dll) —
+  Direksi tertarik di outcome, bukan proses
+- Untuk decision points: rekomendasi Planning harus *eksplisit*,
+  jangan "perlu didiskusikan lebih lanjut"
+
+Untuk slide yang butuh chart:
+- Slide Status Portfolio: traffic light table dengan ikon
+  emoji bulat (hijau/kuning/merah) per segmen
+- Slide Tema Lintas Segmen: diagram sederhana yang menunjukkan
+  overlap antar segmen
+- Slide Risiko: matriks 2x2 (likelihood vs impact)
+
+Tulis ulang outline dengan tone eksekutif + spesifikasi visual.
+]
+
+=== Tahap 5.3.3 — Generate File PPTX
+
+#prompt[
+Buat file PPTX dari outline di atas. Style:
+
+- Cover dengan logo BSI, judul "Radir ISE BD — [Bulan] 2027",
+  nama unit Planning & Portfolio
+- Color scheme: hijau BSI sebagai primary, abu-abu untuk teks
+- Font: standar (Calibri / Helvetica)
+- Setiap slide max 5 bullet, prioritas pada visual hierarchy
+- Slide chart / tabel: kosongkan dulu, sertakan placeholder
+  yang menunjukkan jenis visual + data yang harus diisi
+- Slide Decision Points: sediakan space khusus untuk
+  catatan keputusan / disposisi Direksi
+
+Setelah generate, simpan ke `output/radir-deck-[bulan].pptx`.
+]
+
+=== Output Sesi 5.3
+
+- `output/radir-deck-outline.md` — outline final dengan tone eksekutif
+- `output/radir-deck-[bulan].pptx` — file PPTX siap polishing
+- `output/speaker-notes-radir.md` — catatan pembicara per slide
+
+#tip[
+  Deck Radir berbeda dengan pitch deck eksternal. Di pitch deck (Lab 3), tujuan adalah *meyakinkan* prospek. Di deck Radir, tujuan adalah *mempercepat keputusan* Direksi. Jangan menjual — sajikan opsi, rekomendasi, dan minta keputusan.
+]
+
+#checkpoint[
+  Upload deck radir ke shared folder kelompok Anda.
+
+  *Jika pimpinan hadir:* output Sesi 5.3 jadi bahan masukan untuk consolidated tracker yang dipresentasikan pimpinan di akhir workshop.
+
+  *Jika pimpinan tidak hadir:* ketua kelompok save file ke folder sebagai bagian dari paket output yang akan diserahkan ke unit ISE.
+]
+
+== Sesi 5.4 — Monitoring Portofolio & Early Warning
+
+*Durasi:* 30 menit (14:30 – 15:00)\
+*Output:* Monitoring report + early warning signals + action items per dept
+
+=== Skenario
+
+Fasilitator membagikan file `realisasi-q1-2027.csv` ke shared folder — berisi data realisasi target bisnis per segmen sampai akhir Q1 2027. Tugas Anda: deteksi segmen yang underperform, identifikasi early warning signal yang belum kritis tapi tren-nya negatif, dan susun draft action items yang akan dikirim ke masing-masing dept BD.
+
+=== Tahap 5.4.1 — Analisa Gap Realisasi vs Target
+
+#prompt[
+Upload file `realisasi-q1-2027.csv`. Lakukan analisa gap:
+
+1. Hitung realisasi vs target Q1 per segmen, per metrik
+   (pembiayaan, DPK, fee-based, jumlah prospek aktif)
+2. Klasifikasi tiap segmen ke 3 tier:
+   - *Hijau* (≥ 90% target Q1)
+   - *Kuning* (70–89% target Q1)
+   - *Merah* (< 70% target Q1)
+3. Untuk segmen kuning dan merah, identifikasi metrik mana
+   yang underperform paling tajam
+4. Sajikan dalam tabel traffic light + ringkasan 3 kalimat
+]
+
+=== Tahap 5.4.2 — Early Warning Signal
+
+#prompt[
+Selain gap kuantitatif, identifikasi *early warning signal* —
+indikator yang belum mencapai status kritis tapi tren-nya
+mengkhawatirkan:
+
+1. *Velocity drop:* segmen yang Q1 masih hijau tapi laju akuisisi
+   melambat dari bulan ke bulan
+2. *Concentration risk:* segmen yang realisasinya bagus tapi
+   bergantung pada 1–2 deal besar (jika gagal closing, langsung merah)
+3. *Pipeline shrinkage:* segmen yang jumlah prospek aktifnya turun
+   tanpa kompensasi closing — pipeline tidak terisi ulang
+4. *Funding mix imbalance:* segmen yang realisasi pembiayaan tinggi
+   tapi DPK rendah — masalah likuiditas relatif
+
+Untuk tiap warning yang terdeteksi, sebutkan: segmen, jenis
+warning, severity (mid / high), dan saran tindak lanjut singkat.
+]
+
+=== Tahap 5.4.3 — Action Items per Dept BD
+
+#prompt[
+Susun draft action items yang akan dikirim ke masing-masing dept
+BD pengelola segmen. Format: 1 dokumen per dept, struktur:
+
+*Untuk: Dept BD [N] — Pengelola Segmen [SEGMEN A, B, C]*
+
+1. *Status singkat:* 2 kalimat — segmen mana hijau, kuning, merah
+2. *Prioritas Q2:* 2–3 action concrete yang harus dijalankan
+   dept ini di Q2 untuk closing gap. Tiap action: deskripsi,
+   PIC level dept, target deadline, indikator selesai.
+3. *Early warning untuk diawasi:* 1–2 signal dari Sesi 5.4.2
+   yang relevan ke dept ini, dengan checkpoint review bulanan
+4. *Dukungan dari Planning:* apa yang Planning akan bantu sediakan
+   (data, analisa, koordinasi lintas dept)
+
+Tone: kolaboratif (bukan instruksi top-down), spesifik (bukan
+generic), dengan deadline jelas.
+]
+
+=== Output Sesi 5.4
+
+- `output/monitoring-q1-2027.md` — analisa gap + traffic light
+- `output/early-warning-signals.md` — daftar warning + severity
+- `output/action-items-dept-1.md`, `output/action-items-dept-2.md`, `output/action-items-dept-3.md` — action items per dept BD
+
+#tip[
+  Monitoring yang efektif bukan tentang menemukan siapa yang salah, tapi tentang *memunculkan sinyal lebih awal* sebelum jadi kritis. Tone action items harus kolaboratif — Planning & Portfolio sukses kalau dept BD merasa terbantu, bukan diawasi.
+]
+
+#checkpoint[
+  Upload paket monitoring & action items ke shared folder kelompok.
+
+  *Jika pimpinan hadir:* paket dipakai untuk closing synthesis di sesi Q&A — pimpinan akan integrasikan dengan output BD groups jadi paket follow-up workshop yang lengkap.
+
+  *Jika pimpinan tidak hadir:* paket otomatis masuk ke shared folder workshop untuk distribusi ke seluruh tim ISE pasca-workshop.
+]
+
+// ============================================================
+// 8. LIBRARY PROMPT TEMPLATE
 // ============================================================
 
 = Library Prompt Template
 
-Kumpulan prompt template untuk lima area aktivitas BD. Pakai sebagai titik awal — isi placeholder dalam `[...]` dengan konteks Anda sendiri.
+Kumpulan prompt template untuk lima area aktivitas BD (riset pasar, profiling, brief visit, pitch material, coverage event) plus area Planning & Portfolio (konsolidasi RKAP, sintesis lintas segmen, materi Radir, monitoring). Pakai sebagai titik awal — isi placeholder dalam `[...]` dengan konteks Anda sendiri.
 
 == Riset Pasar
 
@@ -827,13 +1244,123 @@ pada [TANGGAL]. Struktur: peserta, agenda, diskusi per
 agenda, keputusan, action items dengan PIC dan deadline.
 ]
 
+== Planning & Portfolio
+
+=== PP1. Normalisasi Data Multi-Source
+
+#prompt[
+Saya terima [N] file [JENIS DATA — RKAP/realisasi/proyeksi]
+dari [N] dept BD dengan format tidak konsisten. Baca semua
+file, identifikasi struktur kolom masing-masing, buat schema
+gabungan yang menampung semua informasi, normalisasi data
+ke schema tersebut. Tandai inkonsistensi yang ditemukan —
+jangan diasumsikan diam-diam.
+]
+
+=== PP2. Agregasi Portfolio
+
+#prompt[
+Dari data konsolidasi di atas, buat ringkasan agregasi
+level portfolio: total per metrik, breakdown per [DIMENSI 1
+— segmen/dept/wilayah], breakdown per [DIMENSI 2], rasio
+[METRIK A] vs [METRIK B]. Sajikan tabel ringkas + 1 paragraf
+observasi awal.
+]
+
+=== PP3. Gap Analysis
+
+#prompt[
+Lakukan gap analysis terhadap [DATA PORTFOLIO]: identifikasi
+gap konsistensi asumsi antar [SEGMEN/DEPT], gap kapasitas
+(target vs resource), gap alokasi (anggaran vs target).
+Output: list gap dengan severity (kritis/penting/minor)
+dan rekomendasi tindak lanjut.
+]
+
+=== PP4. Sintesis Lintas Segmen
+
+#prompt[
+Saya upload output [JENIS OUTPUT] dari [N] kelompok BD,
+masing-masing pegang segmen berbeda. Ekstrak tema *lintas
+segmen*: lembaga yang overlap, induk ormas yang sama,
+kebutuhan yang berulang, bottleneck regulasi bersama.
+Sajikan per tema dengan referensi ke nama lembaga / dept.
+]
+
+=== PP5. Outline Deck Eksekutif (Radir / Checkpoint)
+
+#prompt[
+Susun outline deck eksekutif untuk [FORUM — Radir bulanan /
+checkpoint kuartalan / review tahunan] tentang [TOPIK].
+Audiens: [LEVEL AUDIENS — Direksi / Komisaris / SEVP].
+Durasi presentasi: [N] menit.
+
+Struktur Status → Issue → Decision:
+1. Cover
+2. Executive summary (1 slide)
+3. Status portfolio dengan traffic light
+4. Highlight 2-3 area strategis
+5. Risiko & mitigasi
+6. Decision points (3-4 item) dengan rekomendasi eksplisit
+7. Next steps & timeline
+
+Setiap slide: judul, 3-5 bullet, catatan visual.
+]
+
+=== PP6. Tone Eksekutif
+
+#prompt[
+Outline deck di atas masih terlalu deskriptif. Tulis ulang
+dengan tone eksekutif: kalimat pendek langsung ke kesimpulan,
+angka harus terbandingkan (vs target/periode lalu), satu
+pesan utama per slide yang bisa ditangkap dalam 5 detik,
+rekomendasi eksplisit di decision points (bukan "perlu
+dibahas lebih lanjut"). Hindari jargon operasional.
+]
+
+=== PP7. Traffic Light Monitoring
+
+#prompt[
+Dari data realisasi vs target [PERIODE] per [SEGMEN/DEPT/
+WILAYAH], klasifikasi ke 3 tier:
+- Hijau: ≥ [THRESHOLD HIJAU]% target
+- Kuning: [THRESHOLD KUNING]-[THRESHOLD HIJAU]% target
+- Merah: < [THRESHOLD KUNING]% target
+
+Untuk tier kuning dan merah, identifikasi metrik mana yang
+underperform paling tajam. Output: tabel traffic light +
+ringkasan 3 kalimat.
+]
+
+=== PP8. Early Warning Detection
+
+#prompt[
+Selain gap kuantitatif, identifikasi early warning signal:
+velocity drop (laju melambat antar periode), concentration
+risk (bergantung 1-2 deal besar), pipeline shrinkage
+(prospek aktif turun tanpa kompensasi closing), funding mix
+imbalance. Untuk tiap warning: [SEGMEN/DEPT], jenis warning,
+severity, saran tindak lanjut singkat.
+]
+
+=== PP9. Action Items Kolaboratif
+
+#prompt[
+Susun draft action items dari [PLANNING] ke [DEPT BD]
+pengelola [SEGMEN]. Struktur: status singkat (2 kalimat),
+prioritas [PERIODE BERIKUTNYA] (2-3 action concrete dengan
+PIC + deadline + indikator selesai), early warning untuk
+diawasi, dukungan dari Planning. Tone: kolaboratif (bukan
+top-down), spesifik (bukan generic).
+]
+
 // ============================================================
-// 8. TEKNIK TAMBAHAN
+// 9. TEKNIK TAMBAHAN
 // ============================================================
 
 = Teknik Tambahan
 
-Dua teknik berikut tidak ikut dipraktikkan di workshop hari ini karena keterbatasan waktu, tapi sering berguna ketika Anda mulai memakai AI untuk pekerjaan harian. Pelajari setelah Anda nyaman dengan pola-pola dasar di Lab 1–4.
+Dua teknik berikut tidak ikut dipraktikkan di workshop hari ini karena keterbatasan waktu, tapi sering berguna ketika Anda mulai memakai AI untuk pekerjaan harian. Pelajari setelah Anda nyaman dengan pola-pola dasar di Lab 1–5.
 
 == JSON sebagai Database Mini
 
@@ -943,7 +1470,7 @@ tampilkan ringkasan: berapa pesantren yang punya BPRS, yang santrinya
 Hasilnya: database prospek terstruktur yang bisa Anda query terus-menerus untuk berbagai kebutuhan BD.
 
 // ============================================================
-// 9. PANDUAN RINGKAS (1 HALAMAN)
+// 10. PANDUAN RINGKAS (1 HALAMAN)
 // ============================================================
 
 #pagebreak()
@@ -968,13 +1495,11 @@ Hasilnya: database prospek terstruktur yang bisa Anda query terus-menerus untuk 
   ]),
 
   block(stroke: 1pt + brand, inset: 12pt, radius: 4pt, [
-    *5 Area Penggunaan AI di BD*
+    *Area Penggunaan AI*
 
-    1. Riset pasar segmen
-    2. Profiling prospek
-    3. Brief visit nasabah
-    4. Pitch material
-    5. Coverage event & korespondensi
+    _Track BD:_ riset pasar segmen, profiling prospek, brief visit, pitch material, coverage event
+
+    _Track Planning:_ konsolidasi RKAP, sintesis lintas segmen, materi Radir, monitoring portofolio
   ]),
 
   block(stroke: 1pt + brand, inset: 12pt, radius: 4pt, [
@@ -1004,7 +1529,7 @@ Hasilnya: database prospek terstruktur yang bisa Anda query terus-menerus untuk 
   #v(0.3em)
 
   #text(font: ("Menlo", "Courier New"), size: 9.5pt)[
-    Saya \[ROLE\] di BSI, fokus segmen \[SEGMEN\].
+    Saya \[ROLE — BD / Planning\] di BSI, fokus \[SEGMEN / PORTFOLIO\].
 
     Tolong \[TUGAS SPESIFIK\].
 
@@ -1025,7 +1550,7 @@ Hasilnya: database prospek terstruktur yang bisa Anda query terus-menerus untuk 
 ])
 
 // ============================================================
-// 10. GLOSSARY
+// 11. GLOSSARY
 // ============================================================
 
 = Glossary
@@ -1047,10 +1572,16 @@ Hasilnya: database prospek terstruktur yang bisa Anda query terus-menerus untuk 
   [*SPA*], [Single Page Application — situs web yang konten dalamnya baru muncul setelah JavaScript jalan, sulit di-scrape biasa],
   [*Iterasi*], [Mengulang prompt dengan perbaikan, sampai output sesuai],
   [*Validasi*], [Mengecek kebenaran output AI terhadap sumber terpercaya — *wajib* untuk fakta rinci],
+  [*RKAP*], [Rencana Kerja & Anggaran Perusahaan — dokumen perencanaan tahunan yang berisi target bisnis dan alokasi anggaran. Sumber input utama Sesi 5.1],
+  [*Radir*], [Rapat Direksi — forum pengambilan keputusan strategis di level Direksi BSI. Output Sesi 5.3 ditujukan ke forum ini],
+  [*Checkpoint*], [Forum review berkala (bulanan / kuartalan) untuk mengevaluasi progress bisnis. Format presentasi mirip Radir tapi audiens lebih internal],
+  [*Portfolio view*], [Konsolidasi data lintas segmen menjadi satu pandangan utuh — yang dilihat oleh Direksi dan unit Planning, bukan oleh dept BD individual],
+  [*Traffic light*], [Klasifikasi cepat status segmen / metrik ke 3 tier warna (hijau / kuning / merah) berdasar threshold yang disepakati],
+  [*Early warning signal*], [Indikator yang belum kritis tapi trennya mengkhawatirkan — terdeteksi sebelum jadi gap yang nyata],
 )
 
 // ============================================================
-// 11. LANGKAH LANJUTAN
+// 12. LANGKAH LANJUTAN
 // ============================================================
 
 = Langkah Lanjutan

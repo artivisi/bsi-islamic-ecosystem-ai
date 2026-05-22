@@ -147,10 +147,21 @@ Dokumen ini melengkapi *WORKBOOK utama*. Khusus untuk Anda yang ikut workshop sa
 Bedanya track ini dari workbook utama: di sini, peran Anda *bukan* mengerjakan lab sendiri, melainkan menjadi *kondektur dialog* antara Anda dan kelompok-kelompok lewat *pertukaran artifact yang dihasilkan AI*. Sepanjang hari Anda akan:
 
 - *Mengirim* arahan, pertanyaan, dan insight yang dihasilkan Claude di iPad
-- *Menerima* output kelompok (CSV, brief, pitch deck) untuk diolah balik
+- *Menerima* output kelompok (CSV, brief, pitch deck, deck Radir) untuk diolah balik
 - *Kirim ulang* hasil olahan agar kelompok menajamkan output mereka
 
 Satu hari workshop punya *4 putaran pertukaran*. Tiap putaran selaras dengan satu lab kelompok. File mengalir lewat *WhatsApp, Telegram, Google Drive, atau email* — pakai channel yang paling natural untuk tim Anda.
+
+== Dua Track Lab yang Anda Layani
+
+Workshop punya 2 track lab paralel — pimpinan / pengamat melayani keduanya:
+
+- *Track BD* (3–5 kelompok pengelola segmen) — output mereka segment-specific: CSV prospek per segmen, brief visit, pitch deck, paket coverage event. Ini sumber utama dialog di Putaran 2–3.
+- *Track Planning & Portfolio* (1 kelompok) — output mereka portfolio-level: konsolidasi RKAP, sintesis insight lintas segmen, deck Radir, monitoring + early warning. Mereka bekerja di Lab 5, paralel dengan Lab 1–4.
+
+#tip[
+  Brief strategis di Putaran 1 dikirim ke *semua kelompok* — BD maupun Planning. Mulai Putaran 2, Anda akan terima output dari kedua track: CSV prospek dari BD + portfolio RKAP dari Planning. Sintesis lintas-segmen di Putaran 2–3 jadi lebih kaya karena ada perspektif segmen (dari BD) *dan* perspektif portfolio (dari Planning). Di Putaran 4, tracker konsolidasi Anda mencakup paket BD + monitoring Planning, jadi paket follow-up untuk seluruh unit ISE.
+]
 
 == Cara Kerja: Dialog via Artifact
 
@@ -229,14 +240,14 @@ Yang *tidak bisa* di iPad (jangan dicoba di hari workshop): Claude Code CLI, JSO
 #flow-block(
   "Anda → Semua Kelompok",
   [Anda (Claude di iPad)],
-  [5 kelompok],
+  [Semua kelompok BD + Planning],
   [Brief framing strategis 1 halaman + daftar challenge questions],
   [WhatsApp grup workshop atau shared Drive],
 )
 
 == Mengapa Putaran Ini
 
-Kelompok masuk Lab 1 dengan lensa segmen masing-masing. Anda yang punya helicopter view 5 segmen sekaligus + agenda strategis 2026 ISE. Brief Anda sebelum Lab 1 dimulai akan tajamkan fokus mereka — sehingga riset Lab 1 selaras dengan prioritas unit.
+Kelompok BD masuk Lab 1 dengan lensa segmen masing-masing. Kelompok Planning masuk Lab 5.1 dengan lensa portfolio. Anda yang punya helicopter view *semua* segmen + agenda strategis 2026 ISE. Brief Anda sebelum lab dimulai akan tajamkan fokus mereka — sehingga riset Lab 1 (BD) dan konsolidasi RKAP (Planning) selaras dengan prioritas unit.
 
 == Generate Brief Strategis
 
@@ -286,9 +297,9 @@ Instruktur akan minta kelompok membaca brief Anda di awal Lab 1 (5 menit) sebaga
 
 #flow-block(
   "Kelompok → Anda",
-  [5 kelompok],
+  [Kelompok BD + Planning],
   [Anda],
-  [5 CSV daftar prospek (hasil Lab 1)],
+  [CSV prospek per kelompok BD (hasil Lab 1) + portfolio RKAP dari Planning (hasil Sesi 5.1)],
   [Upload ke shared Drive folder per-kelompok, atau kirim via WA personal ke Anda],
 )
 
@@ -298,7 +309,7 @@ Instruktur akan minta kelompok membaca brief Anda di awal Lab 1 (5 menit) sebaga
   "Anda → Kelompok",
   [Anda (Claude di iPad)],
   [Tiap kelompok individual + grup],
-  [5 paket challenge questions per kelompok + 1 catatan prospek lintas-segmen],
+  [Paket challenge questions per kelompok BD + catatan portfolio + notes ke kelompok Planning],
   [WA personal untuk per-kelompok, WA grup untuk catatan lintas-segmen],
 )
 
@@ -306,24 +317,33 @@ Instruktur akan minta kelompok membaca brief Anda di awal Lab 1 (5 menit) sebaga
 
 Instruksikan via WA grup di awal Ishoma:
 
-#raw(block: true, "Mohon tiap kelompok upload file CSV prospek Lab 1 ke
-folder Drive [link] paling lambat jam 12:15. Atau kirim
-langsung ke saya via WA. Nama file: prospek-<segmen>.csv")
+#raw(block: true, "Mohon upload file output paling lambat 12:15:
+- Kelompok BD: prospek-<segmen>.csv (hasil Lab 1) ke folder
+  Drive [link]/lab1/
+- Kelompok Planning: portfolio-rkap-2027.csv + narrative
+  (hasil Sesi 5.1) ke folder [link]/sesi51/
+Atau kirim langsung ke saya via WA.")
 
-Buka iPad, ambil semua 5 CSV via Files app, drag ke chat Claude di Project workshop.
+Buka iPad, ambil semua file via Files app, drag ke chat Claude di Project workshop.
 
 == Tahap 2.2 — Sintesis Lintas Kelompok
 
 #prompt[
-Saya upload 5 CSV daftar prospek dari 5 kelompok berbeda — masing-masing
-segmen ekosistem Islam. Generate:
+Saya upload:
+- N CSV daftar prospek dari N kelompok BD (masing-masing 1 segmen)
+- 1 portfolio-rkap-2027.csv + narrative dari kelompok Planning
+
+Generate:
 
 1. Tabel ringkasan: jumlah prospek per segmen, distribusi skor potensi,
    top 3 prospek lintas segmen
 2. *1 catatan lintas-segmen* berisi: prospek yang muncul di 2+ kelompok
-   (lembaga yang relevan untuk lebih dari satu segmen), pola yang
+   BD (lembaga yang relevan untuk lebih dari satu segmen), pola yang
    muncul lintas segmen
-3. *Mermaid chart* distribusi potensi per segmen
+3. *Cross-check vs RKAP*: apakah top prospek per segmen sudah
+   mencerminkan asumsi target di RKAP Planning? Tandai segmen yang
+   target RKAP-nya agresif tapi pipeline prospek tipis (early flag)
+4. *Mermaid chart* distribusi potensi per segmen
 
 Format: 1 dokumen markdown gabungan, siap di-export PDF.
 ]
@@ -331,23 +351,31 @@ Format: 1 dokumen markdown gabungan, siap di-export PDF.
 == Tahap 2.3 — Challenge Questions Per Kelompok
 
 #prompt[
-Untuk masing-masing dari 5 CSV (per kelompok), generate paket challenge
-questions Lab 2:
+Generate paket challenge questions untuk lab berikutnya:
+
+*Untuk tiap kelompok BD* (1 paket per kelompok berdasar CSV mereka):
 - 2 kekuatan riset mereka (apa yang dilakukan baik)
 - 3 challenge questions (apa yang masih perlu didalami sebelum brief
   visit Lab 2)
 - 1 prospek prioritas yang direkomendasikan jadi target Lab 2
 
-Output: 5 paket, satu paket per kelompok. Tiap paket dalam markdown
-yang bisa di-copy ke pesan WA personal ke kelompok terkait.
+*Untuk kelompok Planning* (1 paket khusus):
+- 2 kekuatan konsolidasi RKAP mereka
+- 3 challenge questions tentang asumsi RKAP yang perlu ditinjau saat
+  Sesi 5.2 (sintesis lintas segmen) — terutama yang kontras dengan
+  realitas prospek BD di lapangan
+- 1 rekomendasi tema lintas-segmen yang patut dikejar di Sesi 5.2
+
+Output: paket markdown per kelompok yang bisa di-copy ke pesan WA personal.
 ]
 
 == Tahap 2.4 — Kirim Balik
 
-- *Catatan lintas-segmen + chart*: download sebagai PDF, upload ke shared Drive, broadcast link via WA grup ("buka sebelum mulai Lab 2")
-- *Challenge questions per kelompok*: copy paket masing-masing dan kirim via WA personal ke ketua kelompok
+- *Catatan lintas-segmen + chart*: download sebagai PDF, upload ke shared Drive, broadcast link via WA grup ("buka sebelum mulai lab berikutnya")
+- *Challenge questions per kelompok BD*: copy paket masing-masing dan kirim via WA personal ke ketua kelompok BD
+- *Challenge questions Planning*: kirim via WA personal ke ketua kelompok Planning — mereka pakai sebagai input awal Sesi 5.2 (sintesis lintas segmen)
 
-Kelompok membuka pesan ini di awal Lab 2 — instruksi: upload challenge questions PDF/markdown ke Claude laptop mereka sebelum mulai brief visit, sehingga konteks Anda jadi bagian dari proses Lab 2 mereka.
+Kelompok BD membuka pesan ini di awal Lab 2; kelompok Planning di awal Sesi 5.2 — instruksi sama: upload challenge questions PDF/markdown ke Claude laptop mereka, sehingga konteks Anda jadi bagian dari proses lab mereka.
 
 // ============================================================
 // 5. PERTUKARAN 3
@@ -359,9 +387,9 @@ Kelompok membuka pesan ini di awal Lab 2 — instruksi: upload challenge questio
 
 #flow-block(
   "Kelompok → Anda",
-  [5 kelompok],
+  [Kelompok BD + Planning],
   [Anda],
-  [5 brief visit (output Lab 2, dalam markdown atau PDF)],
+  [Brief visit per kelompok BD (output Lab 2) + insight lintas segmen & deck Radir dari Planning (output Sesi 5.2 & 5.3)],
   [Shared Drive folder per-kelompok],
 )
 
@@ -370,52 +398,66 @@ Kelompok membuka pesan ini di awal Lab 2 — instruksi: upload challenge questio
 #flow-block(
   "Anda → Semua Kelompok",
   [Anda (Claude di iPad)],
-  [5 kelompok],
-  [1 dokumen "Strategic Hooks" — pattern lintas brief untuk dipakai di pitch deck Lab 3],
+  [Semua kelompok BD + Planning],
+  [1 dokumen "Strategic Hooks" — pattern lintas brief + insight Planning untuk dipakai di pitch deck Lab 3 dan deck Radir],
   [Shared Drive folder workshop + broadcast WA grup],
 )
 
-== Tahap 3.1 — Kumpulkan Brief Visit
+== Tahap 3.1 — Kumpulkan Output Lab 2 dan Sesi 5.2
 
 Akhir Lab 2 (sekitar 13:30), broadcast via WA grup:
 
-#raw(block: true, "Brief visit Lab 2 mohon upload ke folder Drive
-[link]/brief-visit/ paling lambat coffee break. Sub-folder
-per kelompok. Format: markdown atau PDF.")
+#raw(block: true, "Mohon upload ke folder Drive paling lambat
+coffee break:
+- Kelompok BD: brief visit (Lab 2) ke [link]/brief-visit/
+- Kelompok Planning: insight-lintas-segmen.md + draft deck Radir
+  ke [link]/sesi52-53/
+Sub-folder per kelompok. Format: markdown atau PDF.")
 
 == Tahap 3.2 — Generate Strategic Hooks
 
-Saat coffee break, upload semua 5 brief visit ke Claude di iPad.
+Saat coffee break, upload semua brief visit BD + output Planning ke Claude di iPad.
 
 #prompt[
-Saya upload 5 brief visit nasabah dari 5 kelompok (5 segmen berbeda).
-Tugas Anda: temukan pattern lintas brief yang akan membuat pitch
-deck Lab 3 lebih kuat.
+Saya upload:
+- N brief visit nasabah dari N kelompok BD (N segmen berbeda)
+- 1 insight-lintas-segmen.md dari kelompok Planning
+- 1 draft deck Radir (outline) dari kelompok Planning
+
+Tugas Anda: temukan pattern lintas brief BD + sintesa-nya dengan
+insight Planning, untuk membuat pitch deck Lab 3 lebih kuat dan
+deck Radir Planning lebih tajam.
 
 Generate dokumen "Strategic Hooks" berisi:
 
 1. *3 kebutuhan keuangan syariah yang konsisten muncul* lintas
    2+ segmen (misal: cash management muncul di RS Islam dan PT
    Islam) — pitch deck yang mention ini akan resonate lebih luas
-2. *2 narrative angle yang bisa dipakai semua kelompok* — frame
+2. *2 narrative angle yang bisa dipakai semua kelompok BD* — frame
    bercerita yang relevan untuk audiens muslim profesional
 3. *1 differentiator BSI* yang muncul natural dari brief — apa
    yang BSI bisa offer yang bank lain tidak bisa
+4. *Konfirmasi / kontradiksi vs insight Planning*: apakah pattern
+   yang muncul di brief BD selaras dengan insight lintas-segmen
+   Planning? Mana yang saling kuatkan, mana yang bertabrakan dan
+   harus dibawa ke Direksi?
 
 Format: PDF 1 halaman, design clean, font besar agar mudah dibaca
-saat Lab 3 sambil berdiri di sekitar laptop kelompok.
+saat Lab 3 / penyusunan deck Radir sambil berdiri di sekitar
+laptop kelompok.
 ]
 
 == Tahap 3.3 — Share ke Semua Kelompok
 
 Download PDF, upload ke shared Drive folder workshop. Broadcast link via WA grup:
 
-#raw(block: true, "Strategic Hooks dari saya untuk pitch deck Lab 3
-[link]. Mohon kelompok upload ke Claude laptop sebelum
-mulai bangun pitch deck — supaya angle pitch Anda lebih
-strategis, bukan generic.")
+#raw(block: true, "Strategic Hooks dari saya — untuk pitch deck
+Lab 3 (BD) dan finalisasi deck Radir Sesi 5.3 (Planning):
+[link]. Mohon upload ke Claude laptop sebelum mulai lab
+berikutnya — supaya angle pitch / deck Radir lebih strategis,
+bukan generic.")
 
-Instruktur memastikan tiap kelompok upload PDF ini ke Claude mereka di awal Lab 3.
+Instruktur memastikan tiap kelompok upload PDF ini ke Claude mereka di awal Lab 3 / Sesi 5.3.
 
 // ============================================================
 // 6. PERTUKARAN 4
@@ -427,9 +469,9 @@ Instruktur memastikan tiap kelompok upload PDF ini ke Claude mereka di awal Lab 
 
 #flow-block(
   "Kelompok → Anda",
-  [5 kelompok],
+  [Kelompok BD + Planning],
   [Anda],
-  [5 paket akhir: brief Lab 2 (final), pitch outline Lab 3, paket coverage Lab 4],
+  [Paket akhir BD (brief Lab 2 final, pitch outline Lab 3, paket coverage Lab 4) + paket akhir Planning (monitoring Q1 + action items per dept dari Sesi 5.4)],
   [Shared Drive folder per-kelompok (sudah ada sejak Putaran 2-3)],
 )
 
@@ -439,28 +481,36 @@ Instruktur memastikan tiap kelompok upload PDF ini ke Claude mereka di awal Lab 
   "Anda → Tim ISE (post-workshop)",
   [Anda (Claude di iPad)],
   [Tim ISE BSI keseluruhan],
-  [1 tracker XLSX lintas tim + 5 draft email follow-up 30 hari],
+  [1 tracker XLSX lintas tim (BD prospek + Planning monitoring) + draft email follow-up 30 hari per kelompok],
   [Shared Drive untuk tracker, email scheduled dikirim 2 hari pasca-workshop],
 )
 
 == Tahap 4.1 — Bangun Consolidated Tracker
 
 #prompt[
-Saya upload paket akhir dari 5 kelompok: brief visit, pitch outline,
-paket coverage event. Buat *tracker-prospek-prioritas.xlsx* dengan
-struktur:
+Saya upload paket akhir:
+- Dari N kelompok BD: brief visit, pitch outline, paket coverage event
+- Dari 1 kelompok Planning: monitoring-q1-2027, early-warning-signals,
+  action-items per dept BD (output Sesi 5.4)
 
-Sheet 1 — Tracker Utama:
+Buat *tracker-ise-konsolidasi.xlsx* dengan struktur:
+
+Sheet 1 — Tracker Prospek (BD):
 - nama_lembaga, segmen, kota, kelompok_pic, potensi, produk_bsi_relevan,
   next_action_30hr, owner, deadline (22 Juni 2026)
 
-Sheet 2 — Ringkasan:
-- Total prospek per segmen
-- Distribusi potensi
-- Top 5 prospek lintas segmen
+Sheet 2 — Portfolio Status (Planning):
+- segmen, traffic_light (hijau/kuning/merah), gap_utama, action_item_planning,
+  early_warning_signal, owner_dept_bd, review_date
 
-Sheet 3 — Notes per Kelompok:
-- Catatan kualitatif tentang quality riset, pitch, dan coverage
+Sheet 3 — Ringkasan Lintas Tim:
+- Total prospek per segmen (BD) vs target RKAP (Planning) — gap pipeline
+- Top 5 prospek lintas segmen
+- Top 3 early warning yang harus diawasi Direksi
+
+Sheet 4 — Notes per Kelompok:
+- Catatan kualitatif tentang quality riset, pitch, coverage (BD)
+  dan quality konsolidasi, deck Radir, monitoring (Planning)
 
 Generate sebagai file XLSX downloadable.
 ]
@@ -470,9 +520,10 @@ Download XLSX, upload ke shared Drive folder workshop. Broadcast link via WA gru
 == Tahap 4.2 — Draft Email Follow-up Per Kelompok
 
 #prompt[
-Susun 5 draft email follow-up — satu per kelompok — yang akan saya
-kirim *2 hari pasca-workshop* (Senin 25 Mei 2026). Tiap email berisi:
+Susun draft email follow-up — satu per kelompok (BD maupun Planning) —
+yang akan saya kirim *2 hari pasca-workshop* (Senin 25 Mei 2026).
 
+*Untuk tiap kelompok BD:*
 - Subject yang specific ke kelompok (sebut segmen mereka)
 - Apresiasi spesifik (1 paragraf): apa yang mereka lakukan baik
   hari ini, kutip 1 detail dari output mereka sebagai bukti
@@ -481,8 +532,18 @@ kirim *2 hari pasca-workshop* (Senin 25 Mei 2026). Tiap email berisi:
   review progres
 - Signature Anda
 
-Format: 1 file DOCX berisi 5 email berurutan. Tiap email dipersonalisasi
-sesuai kelompoknya.
+*Untuk kelompok Planning:*
+- Subject: konsolidasi RKAP & monitoring portfolio post-workshop
+- Apresiasi spesifik: 1 detail dari deck Radir / monitoring yang
+  paling tajam
+- Komitmen: review cycle monitoring portfolio bulanan dengan dept
+  BD (sebut tanggal Radir berikutnya)
+- Tawaran coaching: refinement deck Radir + setup template monitoring
+  reguler
+- Signature Anda
+
+Format: 1 file DOCX berisi semua email berurutan. Tiap email
+dipersonalisasi sesuai kelompoknya.
 ]
 
 Download DOCX. Jadwal kirim email ke kelompok masing-masing pada Senin pagi (25 Mei).
@@ -508,10 +569,10 @@ Pakai tracker XLSX dan strategic hooks (Putaran 3) saat sesi Q&A:
 == Output yang Anda Bawa Pulang
 
 - *Brief strategis ISE 2026* (Putaran 1) — bahan referensi internal
-- *Catatan lintas-segmen + chart distribusi* (Putaran 2)
-- *Strategic Hooks* (Putaran 3) — narrative angle untuk semua pitch ISE
-- *tracker-prospek-prioritas.xlsx* (Putaran 4) — basis follow-up 30 hari
-- *5 draft email* (Putaran 4) — siap kirim Senin
+- *Catatan lintas-segmen + chart distribusi + cross-check vs RKAP* (Putaran 2)
+- *Strategic Hooks* (Putaran 3) — narrative angle untuk semua pitch ISE + sintesa dengan insight Planning
+- *tracker-ise-konsolidasi.xlsx* (Putaran 4) — tracker prospek BD + portfolio monitoring Planning, basis follow-up 30 hari
+- *Draft email per kelompok* (Putaran 4) — siap kirim Senin, BD + Planning
 
 == Lanjutkan Pola Dialog Pasca-Workshop
 
