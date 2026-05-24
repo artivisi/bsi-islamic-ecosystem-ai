@@ -31,16 +31,22 @@
   #v(0.8em)
 ]
 
-#show heading.where(level: 2): it => [
-  #v(0.6em)
+#show heading.where(level: 2): it => block(
+  sticky: true,
+  above: 1.5em,
+  below: 0.7em,
+  breakable: false,
+)[
   #text(fill: brand, size: 14pt, weight: "bold")[#it.body]
-  #v(0.2em)
 ]
 
-#show heading.where(level: 3): it => [
-  #v(0.4em)
+#show heading.where(level: 3): it => block(
+  sticky: true,
+  above: 1.1em,
+  below: 0.5em,
+  breakable: false,
+)[
   #text(fill: accent, size: 11.5pt, weight: "bold")[#it.body]
-  #v(0.1em)
 ]
 
 #show raw.where(block: true): it => block(
