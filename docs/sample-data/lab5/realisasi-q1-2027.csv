@@ -1,0 +1,10 @@
+segmen,dept_pengelola,target_pembiayaan_q1_miliar,realisasi_pembiayaan_q1_miliar,achievement_pct_pembiayaan,target_dpk_q1_miliar,realisasi_dpk_q1_miliar,achievement_pct_dpk,target_fee_q1_miliar,realisasi_fee_q1_miliar,achievement_pct_fee,jumlah_prospek_aktif_q1,perubahan_prospek_vs_q4_2026,catatan_q1
+Pesantren,Dept 1 — Pendidikan,170.0,155.0,91,124.0,118.0,95,9.0,8.5,94,118,-2,"Hijau overall, tapi laju akuisisi prospek baru melambat di Maret (Jan 45 → Feb 38 → Mar 35). Mulai velocity drop."
+Sekolah Islam,Dept 1 — Pendidikan,63.0,48.0,76,57.0,44.0,77,4.2,3.1,74,67,-28,Kuning. Pipeline prospek aktif turun 30% dari Q4 2026 (95 → 67). Yayasan multi-unit yang dijanjikan jadi anchor belum closing.
+PT Islam,Dept 1 — Pendidikan,95.0,62.0,65,72.5,55.0,76,8.0,4.2,53,42,-3,"Merah pembiayaan. 1 deal besar dengan UIN Jakarta (estimasi 25 miliar) pending closing → concentration risk. Jika gagal, achievement turun ke ~38%."
+RS Islam,Dept 2 — Layanan,275.0,305.0,111,170.0,144.5,85,17.5,16.8,96,38,3,Hijau pembiayaan tapi DPK underperform (85%) → funding mix imbalance. Ekspansi RS Islam terlalu cepat sebelum landasan deposit settled.
+Masjid,Dept 2 — Layanan,1.25,0.9,72,21.25,16.0,75,1.25,0.95,76,152,-18,Kuning. Masjid Istiqlal yang diharapkan jadi anchor cash management belum tanda-tangan MoU. Pipeline 152 masjid aktif tapi conversion lambat.
+ZISWAF,Dept 2 — Layanan,3.0,3.7,123,48.75,67.0,137,3.25,4.1,126,58,8,"Hijau, surge karena program Ramadan ZISWAF digital. WARNING: perlu antisipasi pasca-Ramadan slowdown di Q2."
+Halal F&B/Fashion,Dept 3 — Ekonomi,36.0,28.5,79,20.25,14.5,72,2.8,2.0,71,62,-18,"Kuning. Sertifikasi halal MUI delay 3 bulan, pipeline UMKM tertunda. Tidak fatal — momentum akan kembali Q2 jika sertifikasi resume."
+Travel Umrah,Dept 3 — Ekonomi,42.0,35.0,83,76.5,72.0,94,2.7,2.5,93,58,5,"Kuning di pembiayaan, tapi Q1 memang seasonal low (musim umrah baru aktif Q3). DPK kuat karena jamaah savings stabil. Bukan red flag."
+Ormas Islam,Dept 3 — Ekonomi,11.875,7.2,61,18.125,11.5,63,1.0,0.6,60,17,-8,"Merah. Belum ada MoU induk ormas signed (NU, Muhammadiyah masih negosiasi). Pipeline 25 prospek tidak konversi tanpa payung MoU dulu."
