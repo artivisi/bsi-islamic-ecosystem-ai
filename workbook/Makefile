@@ -1,6 +1,9 @@
 TYPST_SOURCES := WORKBOOK.typ BOSS-TRACK.typ
 PDFS := $(TYPST_SOURCES:.typ=.pdf)
 
+DOCS_DIR := ../docs
+DOCS_PDFS := $(addprefix $(DOCS_DIR)/,$(PDFS))
+
 MMD_SOURCES := $(wildcard diagrams/*.mmd)
 PNG_DIAGRAMS := $(MMD_SOURCES:.mmd=.png)
 
@@ -8,10 +11,13 @@ PUPPETEER_CONFIG := diagrams/puppeteer-config.json
 
 .PHONY: all watch clean diagrams
 
-all: $(PDFS)
+all: $(PDFS) $(DOCS_PDFS)
 
 %.pdf: %.typ $(PNG_DIAGRAMS)
 	typst compile $<
+
+$(DOCS_DIR)/%.pdf: %.pdf
+	cp $< $@
 
 diagrams: $(PNG_DIAGRAMS)
 
@@ -31,4 +37,4 @@ watch:
 	typst watch WORKBOOK.typ
 
 clean:
-	rm -f $(PDFS)
+	rm -f $(PDFS) $(DOCS_PDFS)
